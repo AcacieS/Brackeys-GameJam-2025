@@ -6,8 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Menu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: cfb613a61ea3ca144bcb050274c34f70
+  - enabled: 1
+    path: Assets/Scenes/Centipede.unity
+    guid: 1c9ca066ae226fc4ab2183729bcfe1d8
+  - enabled: 1
+    path: Assets/Scenes/Dog.unity
+    guid: 21937cb3b3986944fbb4730a2daf7117
+  - enabled: 1
+    path: Assets/Scenes/Fish.unity
+    guid: 0e77c343627bbab4ebf55f30edb6a2b4
+  - enabled: 1
+    path: Assets/Scenes/Pig.unity
+    guid: d9db82cd132b07c459ecce4281c9235e
+  - enabled: 1
+    path: Assets/Scenes/Turtle.unity
+    guid: cd221b8532ea74743aaeb81977ba7153
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
