@@ -1,4 +1,5 @@
 
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,12 +14,23 @@ public class BeatManager : MonoBehaviour
     private bool isFinish = false;
     //private bool isWait = true;
     private bool waitStarted = false;
+    //private float lastSampledTime = 0f;
+    private float songLengthSec;     // length of the clip in seconds
+    private float songLengthBeats;   // length of the clip in beats
+    private float loopOffsetBeats;   // how many beats have passed across loops
+
+    private float lastSongTime;
     private void Start()
     {
+        // songLengthSec = _audioSource.clip.length;
+        // songLengthBeats = songLengthSec * (_bpm / 60f);
+
         if (_audioSource == null)
         {
             _audioSource = GetComponent<AudioSource>();
         }
+        // lastSongTime = 0;
+        // loopOffsetBeats = 0;
 
         StartOverride();
     }
@@ -33,6 +45,20 @@ public class BeatManager : MonoBehaviour
 
     private void Update()
     {
+        // float songTime =_audioSource.time;
+        // if (songTime < lastSongTime)
+        // {
+        //     // we looped back
+        //     loopOffsetBeats += songLengthBeats;
+
+        //     // restart playback manually
+        //     _audioSource.Stop();
+        //     _audioSource.Play();
+        // }
+
+
+        // lastSongTime = songTime;
+
         UpdateOverride();
 
         if (_intervals[index_interval].getIsFinish()) //if current is Finish
@@ -42,12 +68,25 @@ public class BeatManager : MonoBehaviour
 
         for (int i = 0; i < _intervals[index_interval].Size() && !isFinish; i++)
         {
-            float sampledTime = (_audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f)); //interval.GetIntervalLength(_bpm)));
+            float sampledTime = getSampledTime();
             _intervals[index_interval].getIntervals(i).CheckForNewInterval(sampledTime);
         }
         
         
     }
+    // private void ResetAllIntervals(float startBeat)
+    // {
+    //     foreach (var pattern in _intervals)
+    //     {
+    //         for (int i = 0; i < pattern.Size(); i++)
+    //         {
+    //             pattern.getIntervals(i).Reset(startBeat);
+    //         }
+    //     }
+
+    //     if (wait != null)
+    //         wait.Reset(startBeat);
+    // }
     private void NextInterval()
     {
         if (index_interval + 1 < _intervals.Length)
@@ -62,7 +101,7 @@ public class BeatManager : MonoBehaviour
         {
             isFinish = true;
         }
-        
+
     }
     private void Wait()
     {
@@ -94,7 +133,7 @@ public class BeatManager : MonoBehaviour
 
         return; // stop here until wait is done
     }
-    private float getSampledTime()
+    public float getSampledTime()
     {
         return _audioSource.timeSamples / (float) _audioSource.clip.frequency * (_bpm / 60f);
         

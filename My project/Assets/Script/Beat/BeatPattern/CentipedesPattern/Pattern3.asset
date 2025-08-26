@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max_pattern: 16
   steps:
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
+  - 2
+  - 2
+  - 2
+  - 1
+  - 1
+  - 2
+  - 2
+  - 2
+  - 1
+  - 1
   isLooping: 0

@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887eb7e281b17bb469ec5f9a599967b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beat_anim: beat_anim
 --- !u!1 &377239606
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +430,18 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1512838654}
+            m_TargetAssemblyTypeName: PulseToBeat, Assembly-CSharp
+            m_MethodName: Pulse
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1919035179}
             m_TargetAssemblyTypeName: PulseToBeat, Assembly-CSharp
             m_MethodName: Pulse
             m_Mode: 1
@@ -704,7 +717,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 24.267685, w: 0}
+  m_margin: {x: 0, y: 0, z: -90.385956, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -886,6 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887eb7e281b17bb469ec5f9a599967b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beat_anim: beat_anim
 --- !u!95 &536039199
 Animator:
   serializedVersion: 7
@@ -1533,6 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887eb7e281b17bb469ec5f9a599967b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beat_anim: beat_anim
 --- !u!114 &1512838654 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1988900607196960186, guid: 243f00b19fb85e6448778e11fb07f694, type: 3}
@@ -1662,6 +1677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887eb7e281b17bb469ec5f9a599967b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beat_anim: beat_anim
 --- !u!95 &1804163849
 Animator:
   serializedVersion: 7
@@ -1767,6 +1783,8 @@ GameObject:
   - component: {fileID: 1919035176}
   - component: {fileID: 1919035177}
   - component: {fileID: 1919035178}
+  - component: {fileID: 1919035179}
+  - component: {fileID: 1919035180}
   m_Layer: 0
   m_Name: Press
   m_TagString: Untagged
@@ -1783,7 +1801,7 @@ Transform:
   m_GameObject: {fileID: 1919035173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3119, y: 0, z: 0}
+  m_LocalPosition: {x: 8, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1932,6 +1950,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1919035179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919035173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887eb7e281b17bb469ec5f9a599967b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beat_anim: press_beat_anim
+--- !u!95 &1919035180
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919035173}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b25f13536ea1eb74d8ef141bf716c0c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1976172280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2103,7 @@ Transform:
   m_GameObject: {fileID: 2025848750}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.52, y: 0.0049, z: 0}
+  m_LocalPosition: {x: -8, y: 0.0049, z: 0}
   m_LocalScale: {x: 1, y: 10.238496, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
