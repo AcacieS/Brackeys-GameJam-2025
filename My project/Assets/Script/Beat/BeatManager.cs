@@ -161,29 +161,40 @@ public class Intervals
     public void CheckForNewInterval(float songPositionInBeats)
     {
         Debug.Log("maybe is Finish" + isFinish);
-        if (!isFinish)
-        {
-            if (_patternIndex < _stepsSO.steps.Length && songPositionInBeats >= _nextBeat)
-            {
-                Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
-                OnEachBeat?.Invoke();
-                // Trigger
-                _trigger.Invoke();
+        if (isFinish) return;
 
-                // Move to next step in the pattern
-                _nextBeat += _stepsSO.steps[_patternIndex];
-                _patternIndex++;
-            }
-            if (_patternIndex >= _stepsSO.steps.Length && _stepsSO.isLooping)
-            {
-                Debug.Log("hey looping");
-                _patternIndex = 0;
-            }
+
+        if (_patternIndex < _stepsSO.steps.Length && songPositionInBeats >= _nextBeat)
+        {
+            Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
+            OnEachBeat?.Invoke();
+            _trigger.Invoke();
+
+            // Move to next step in the pattern
+            _nextBeat += _stepsSO.steps[_patternIndex];
+            _patternIndex++;
             if (_patternIndex >= _stepsSO.steps.Length && !_stepsSO.isLooping)
+            {
+                if (songPositionInBeats >= _nextBeat)
+                {
+                    isFinish = true;
+                }
+
+            }
+
+        } else if (_patternIndex >= _stepsSO.steps.Length && !_stepsSO.isLooping) {
+            if (songPositionInBeats >= _nextBeat)
             {
                 isFinish = true;
             }
         }
+        if (_patternIndex >= _stepsSO.steps.Length && _stepsSO.isLooping)
+        {
+            Debug.Log("hey looping");
+            _patternIndex = 0;
+        }
+        
+        
         
     }
     public bool getIsFinish()
@@ -195,24 +206,3 @@ public class Intervals
 
     }
 }
-
-// [System.Serializable]
-// public class Intervals
-// {
-//     [SerializeField] private float _steps;
-//     [SerializeField] private UnityEvent _trigger;
-//     private int _lastInterval;
-//     public float GetIntervalLength(float bpm)
-//     {
-//         return 60f / (bpm * _steps);
-//     }
-
-//     public void CheckForNewInterval(float interval)
-//     {
-//         if (Mathf.FloorToInt(interval) != _lastInterval)
-//         {
-//             _lastInterval = Mathf.FloorToInt(interval);
-//             _trigger.Invoke();
-//         }
-//     }
-//  }
