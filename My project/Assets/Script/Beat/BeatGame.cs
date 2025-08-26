@@ -9,8 +9,6 @@ public class BeatGame : BeatManager
     //[SerializeField] private Animator animBeat;
     [SerializeField] private AudioClip audioHole;
     [SerializeField] private Vector3 place;
-    [SerializeField] private float beatTempo;
-    private float eachBeat;
 
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI scoreUI;
@@ -29,38 +27,16 @@ public class BeatGame : BeatManager
 
     public override void StartOverride()
     {
-        beatTempo = beatTempo / 60f;
-        eachBeat = beatTempo / 4f;
         scoreUI.text = "Score: 0";
-        currentMultiplier = 1;
-        StartCoroutine(BeatRoutine());
-        // foreach (var interval in _intervals)
-        // {
-        //     interval.OnEachBeat = () =>
-        //     {
-        //         SpawnHole(); // call your custom function
-        //     };
-        // }
+        currentMultiplier = 1;  
     }
     private void SpawnHole()
     {
         Debug.Log("Spawn a hole at this beat");
         // Instantiate your hole prefab here
     }
-    public float getBeat()
-    {
-        return beatTempo;
-    }
-    private IEnumerator BeatRoutine()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(eachBeat);
-            //animBeat.Play("beat_anim");
-        }
-
-
-    }
+    
+    
 
     
 
@@ -117,9 +93,6 @@ public class BeatGame : BeatManager
 
         }
     }
-    // public override void EachBeatPattern()
-    // {
-        
-    // }
+    
     
 }

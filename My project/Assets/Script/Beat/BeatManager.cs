@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,8 +7,9 @@ public abstract class BeatManager : MonoBehaviour
     [Header("Beat Manager")]
     [SerializeField] protected float _bpm;
     private AudioSource _audioSource;
-    [SerializeField] protected Intervals[] _intervals;
-
+    [SerializeField] protected Interval_Pattern[] _intervals;
+    [SerializeField] protected int index_interval = 0;
+    private bool isFinish = false;
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -17,22 +19,58 @@ public abstract class BeatManager : MonoBehaviour
     {
 
     }
-
+    public float getBeat()
+    {
+        return _bpm;
+    }
 
     private void Update()
     {
-        foreach (Intervals interval in _intervals)
+        if (_intervals[index_interval].getIsFinish())
+        {
+            if (index_interval + 1 < _intervals.Length)
+            {
+                index_interval++;
+            }
+            else
+            {
+                isFinish = true;
+            }
+        }
+    
+        for (int i = 0; i < _intervals[index_interval].Size()&&!isFinish; i++)
         {
             float sampledTime = (_audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f)); //interval.GetIntervalLength(_bpm)));
-            interval.CheckForNewInterval(sampledTime);
+            _intervals[index_interval].getIntervals(i).CheckForNewInterval(sampledTime);
         }
+        
         UpdateOverride();
     }
     public virtual void UpdateOverride()
     {
         
+
     }
-    
+
+}
+[System.Serializable]
+public class Interval_Pattern
+{
+    [SerializeField] private Intervals[] sameTime_interval;
+
+    public int Size()
+    {
+        return sameTime_interval.Length;
+    }
+    public Intervals getIntervals(int index)
+    {
+        return sameTime_interval[index];
+    }
+    public bool getIsFinish()
+    {
+        return sameTime_interval[0].getIsFinish();
+    }
+
 }
 
 
@@ -46,7 +84,7 @@ public class Intervals
     private int _lastInterval;
     private int _patternIndex = 0;
     private float _nextBeat = 0f;
-
+    private bool isFinish = false;
 
     public void Reset()
     {
@@ -57,21 +95,33 @@ public class Intervals
 
     public void CheckForNewInterval(float songPositionInBeats)
     {
-        if (_patternIndex < _stepsSO.steps.Length && songPositionInBeats >= _nextBeat)
+        if (isFinish)
         {
-            Debug.Log("next beat: " + _stepsSO.steps[_patternIndex]);
-            OnEachBeat?.Invoke();
-            // Trigger
-            _trigger.Invoke();
+            if (_patternIndex < _stepsSO.steps.Length && songPositionInBeats >= _nextBeat)
+            {
+                Debug.Log("next beat: " + _stepsSO.steps[_patternIndex]);
+                OnEachBeat?.Invoke();
+                // Trigger
+                _trigger.Invoke();
 
-            // Move to next step in the pattern
-            _nextBeat += _stepsSO.steps[_patternIndex];
-            _patternIndex++;
+                // Move to next step in the pattern
+                _nextBeat += _stepsSO.steps[_patternIndex];
+                _patternIndex++;
+            }
+            if (_patternIndex >= _stepsSO.steps.Length && _stepsSO.isLooping)
+            {
+                _patternIndex = 0;
+            }
+            if (_patternIndex >= _stepsSO.steps.Length && !_stepsSO.isLooping)
+            {
+                isFinish = true;
+            }
         }
-        if (_patternIndex >= _stepsSO.steps.Length && _stepsSO.isLooping)
-        {
-            _patternIndex = 0;
-        }
+        
+    }
+    public bool getIsFinish()
+    {
+        return isFinish;
     }
     public virtual void EachBeatPattern()
     {
