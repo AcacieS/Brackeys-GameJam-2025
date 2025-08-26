@@ -1,18 +1,25 @@
-using JetBrains.Annotations;
+
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class BeatManager : MonoBehaviour
+public class BeatManager : MonoBehaviour
 {
     [Header("Beat Manager")]
     [SerializeField] protected float _bpm;
-    private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] protected Interval_Pattern[] _intervals;
+    [SerializeField] private Intervals wait;
     [SerializeField] protected int index_interval = 0;
     private bool isFinish = false;
+    private bool isWait = true;
+    private bool waitStarted = false;
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        if (_audioSource == null)
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
+
         StartOverride();
     }
     public virtual void StartOverride()
@@ -21,30 +28,93 @@ public abstract class BeatManager : MonoBehaviour
     }
     public float getBeat()
     {
-        return _bpm;
+        return _bpm/60f;
     }
 
     private void Update()
     {
+        UpdateOverride();
+
         if (_intervals[index_interval].getIsFinish())
         {
             if (index_interval + 1 < _intervals.Length)
             {
-                index_interval++;
+
+                if (wait != null && isWait)
+                {
+                    // Debug.Log("hey wait");
+                    // // insert wait before advancing
+                    // if (!wait.getIsFinish())
+                    // {
+                    //     float sampledTime = (_audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f));
+                    //     wait.CheckForNewInterval(sampledTime);
+                    //     return; // stop here until wait is done
+                    // }
+                    // else
+                    // {
+                    //     Debug.Log("finish wait");
+                    //     float sampledTime = _audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f);
+                    //     wait.Reset(sampledTime); // reset so it can be reused later
+                    //     index_interval++; // now move to next
+                    //     isWait = false;
+                    // }
+                    
+                    if (!waitStarted)
+                    {
+                        Debug.Log("Wait Started");
+                        float sampledTime = _audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f);
+                        wait.Reset(sampledTime);
+                        waitStarted = true;
+                    }
+                    
+                    // Keep ticking wait
+                    float sampledTime2 = _audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f);
+                    wait.CheckForNewInterval(sampledTime2);
+
+                    if (wait.getIsFinish())
+                    {
+                        // wait done → move to next interval
+                        index_interval++;
+                        isWait = false;
+                        waitStarted = false; // reset for next time
+                        Debug.Log("finish wait, moving to next interval: " + index_interval);
+
+                        // Reset next interval’s steps
+                        float sampledTime3 = _audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f);
+                        for (int i = 0; i < _intervals[index_interval].Size(); i++)
+                            _intervals[index_interval].getIntervals(i).Reset(sampledTime3);
+                    }
+
+                    return; // stop here until wait is done
+                }
+                else
+                {
+                    index_interval++;
+                    Debug.Log("index interval: " + index_interval);
+                    float sampledTime = _audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f);
+                    isWait = true;
+                    for (int i = 0; i < _intervals[index_interval].Size(); i++)
+                    {
+                        _intervals[index_interval].getIntervals(i).Reset(sampledTime);
+                    }
+                }
+                
             }
             else
             {
+
+                Debug.Log(index_interval+": finishhhhhhhhhhhhh");
                 isFinish = true;
             }
         }
-    
-        for (int i = 0; i < _intervals[index_interval].Size()&&!isFinish; i++)
-        {
-            float sampledTime = (_audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f)); //interval.GetIntervalLength(_bpm)));
-            _intervals[index_interval].getIntervals(i).CheckForNewInterval(sampledTime);
-        }
+
+        for (int i = 0; i < _intervals[index_interval].Size() && !isFinish; i++)
+            {
+                float sampledTime = (_audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f)); //interval.GetIntervalLength(_bpm)));
+                _intervals[index_interval].getIntervals(i).CheckForNewInterval(sampledTime);
+            }
         
-        UpdateOverride();
+        
     }
     public virtual void UpdateOverride()
     {
@@ -86,20 +156,20 @@ public class Intervals
     private float _nextBeat = 0f;
     private bool isFinish = false;
 
-    public void Reset()
+    public void Reset(float songPositionInBeats)
     {
         _patternIndex = 0;
-        _nextBeat = 0f;
+        _nextBeat = songPositionInBeats;
         _lastInterval = -1;
     }
 
     public void CheckForNewInterval(float songPositionInBeats)
     {
-        if (isFinish)
+        if (!isFinish)
         {
             if (_patternIndex < _stepsSO.steps.Length && songPositionInBeats >= _nextBeat)
             {
-                Debug.Log("next beat: " + _stepsSO.steps[_patternIndex]);
+                Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
                 OnEachBeat?.Invoke();
                 // Trigger
                 _trigger.Invoke();
@@ -110,6 +180,7 @@ public class Intervals
             }
             if (_patternIndex >= _stepsSO.steps.Length && _stepsSO.isLooping)
             {
+                Debug.Log("hey looping");
                 _patternIndex = 0;
             }
             if (_patternIndex >= _stepsSO.steps.Length && !_stepsSO.isLooping)

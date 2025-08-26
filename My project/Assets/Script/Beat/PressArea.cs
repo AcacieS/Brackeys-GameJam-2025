@@ -50,6 +50,7 @@ public class PressArea : MonoBehaviour
         CurrentNoteDetected = null;
         canBePressed = false;
     }
+    
     public virtual bool CondNormal()
     {
         float offset = transform.localScale.x * 0.25f;
