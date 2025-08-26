@@ -1132,7 +1132,24 @@ MonoBehaviour:
       _trigger:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 2025848750}
+          - m_Target: {fileID: 2025848753}
+            m_TargetAssemblyTypeName: SpawnNote, Assembly-CSharp
+            m_MethodName: SpawnNoteInstance
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - sameTime_interval:
+    - _stepsSO: {fileID: 11400000, guid: af0e3f5f64351a54f9a2088a7eae2e50, type: 2}
+      _trigger:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2025848753}
             m_TargetAssemblyTypeName: SpawnNote, Assembly-CSharp
             m_MethodName: SpawnNoteInstance
             m_Mode: 1
@@ -1149,13 +1166,13 @@ MonoBehaviour:
     _trigger:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 0
+        - m_Target: {fileID: 1804163848}
+          m_TargetAssemblyTypeName: PulseToBeat, Assembly-CSharp
+          m_MethodName: Pulse
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

@@ -15,6 +15,4 @@ MonoBehaviour:
   max_pattern: 8
   steps:
   - 1
-  - 1
-  - 1
-  isLooping: 0
+  isLooping: 1
