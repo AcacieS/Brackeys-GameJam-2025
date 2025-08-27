@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BeatGame : BeatManager
 {
@@ -42,7 +43,12 @@ public class BeatGame : BeatManager
     public void NoteHit()
     {
         Debug.Log("Hit On Time");
-
+        Multiplier();
+        multiplierUI.text = "Multiplier: x" + currentMultiplier;
+        scoreUI.text = "Score: " + currentScore.ToString();
+    }
+    private void Multiplier()
+    {
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
             multiplierTracker++;
@@ -51,9 +57,11 @@ public class BeatGame : BeatManager
                 currentMultiplier++;
             }
         }
-
-        multiplierUI.text = "Multiplier: x" + currentMultiplier;
-        scoreUI.text = "Score: " + currentScore.ToString();
+        
+    }
+    public void NoteHit(NoteState noteHitType)
+    {
+        Debug.Log("Hit On Time");
     }
     public void NormalHit()
     {
@@ -76,6 +84,12 @@ public class BeatGame : BeatManager
         multiplierTracker = 0;
         currentMultiplier = 1;
         multiplierUI.text = "Multiplier: x" + currentMultiplier;
+    }
+    public override void OnSongFinished()
+    {
+        Debug.Log("current Score: " + currentScore);
+        GameManager.Instance.AddCoins(currentScore);
+        SceneManager.LoadScene("Scenes/Shop");
     }
 
     void Awake()

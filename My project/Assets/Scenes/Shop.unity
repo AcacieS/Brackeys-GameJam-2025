@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 231100431}
   - component: {fileID: 231100433}
   - component: {fileID: 231100432}
+  - component: {fileID: 231100434}
   m_Layer: 5
   m_Name: CoinsUI
   m_TagString: Untagged
@@ -527,6 +528,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231100430}
   m_CullTransparentMesh: 1
+--- !u!114 &231100434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231100430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6cebc231e03d5418c25afdb9485041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsText: {fileID: 231100432}
 --- !u!1 &339841816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,7 +1319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &687716984
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2415,6 +2429,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 19cd1f79f75dfd9489a9c215b8c4c392, type: 2}
   - {fileID: 11400000, guid: 859e6e4f951398d46b81cd85d1f0293f, type: 2}
   - {fileID: 11400000, guid: 25a6a929de395954fb67261072076ee4, type: 2}
+  currentClientSO: {fileID: 11400000, guid: 2e7b9a779ffa9ca4db52060f9169c1d1, type: 2}
   isFinish: 0
 --- !u!95 &1771795775
 Animator:

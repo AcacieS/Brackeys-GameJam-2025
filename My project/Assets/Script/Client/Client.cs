@@ -5,8 +5,7 @@ public class Client : MonoBehaviour
 {
     [Header("Client")]
     [SerializeField] private ClientSO[] clientsSO;
-    private ClientSO currentClientSO;
-
+    [SerializeField] private ClientSO currentClientSO;
 
 
     [SerializeField] private bool isFinish = false;
@@ -25,8 +24,12 @@ public class Client : MonoBehaviour
     }
     private void SpawnClient()
     {
-        int index_client = Random.Range(0, clientsSO.Length);
-        currentClientSO = clientsSO[index_client];
+        if (currentClientSO == null)
+        {
+            int index_client = Random.Range(0, clientsSO.Length);
+            currentClientSO = clientsSO[index_client];
+        }
+        
         Debug.Log("Current Client"+currentClientSO.clientName);
         Restart();
     }

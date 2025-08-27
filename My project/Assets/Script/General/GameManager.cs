@@ -1,6 +1,5 @@
-using TMPro;
+using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,9 +8,10 @@ public class GameManager : MonoBehaviour
     private float maxArmHealth = 100f;
     public static float armHealth = 100f;
     public static Difficulty currentDifficulty = Difficulty.Easy;
+    public event Action OnCoinsChanged;
 
     [Header("UI")]
-    [SerializeField] private TextMeshProUGUI coinsUI;
+    //[SerializeField] private TextMeshProUGUI coinsUI;
     [SerializeField] private HealthBar healthBar;
 
     [Header("Client")]
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         armHealth += AddArmHealth;
         healthBar.SetHealth(armHealth);
+        
     }
     public void RemoveArmHealth(float RemoveArmHealth)
     {
@@ -58,13 +59,16 @@ public class GameManager : MonoBehaviour
     public void AddCoins(int AddCoins)
     {
         coins += AddCoins;
-        coinsUI.text = coins.ToString();
+        OnCoinsChanged?.Invoke();
+        // coinsUI.text = coins.ToString();
+        // Debug.Log("coins: "+coins);
 
     }
     public void RemoveCoins(int RemoveCoins)
     {
         coins -= RemoveCoins;
-        coinsUI.text = coins.ToString();
+        OnCoinsChanged?.Invoke();
+        //coinsUI.text = coins.ToString();
     }
     //------------------------- Client Spawn -------------------------
     void Start()
