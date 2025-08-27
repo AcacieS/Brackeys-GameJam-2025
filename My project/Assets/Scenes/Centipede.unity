@@ -453,6 +453,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  hasWait: 0
   wait:
     _stepsSO: {fileID: 0}
     _trigger:
@@ -1175,6 +1176,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  hasWait: 1
   wait:
     _stepsSO: {fileID: 11400000, guid: b4bda57032aa4f04b80e9de93464718d, type: 2}
     _trigger:

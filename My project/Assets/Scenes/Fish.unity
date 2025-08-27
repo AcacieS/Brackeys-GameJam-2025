@@ -1212,8 +1212,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 090a02490f24a2840ad659b82e410229, type: 3}
-  m_Resource: {fileID: 8300000, guid: 090a02490f24a2840ad659b82e410229, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 94ca92c6c163deb41a52e054670a5a2d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 94ca92c6c163deb41a52e054670a5a2d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5faa6aa68cea0d499d0c64e60133ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bpm: 120
+  _bpm: 96
   _audioSource: {fileID: 0}
   _intervals:
   - sameTime_interval:
@@ -1348,6 +1348,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  hasWait: 0
   wait:
     _stepsSO: {fileID: 0}
     _trigger:
