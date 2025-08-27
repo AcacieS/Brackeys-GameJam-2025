@@ -62,6 +62,20 @@ public class BeatGame : BeatManager
     public void NoteHit(NoteState noteHitType)
     {
         Debug.Log("Hit On Time");
+        switch (noteHitType)
+        {
+            case NoteState.Good:
+                GoodHit();
+                break;
+            case NoteState.Perfect:
+                PerfectHit();
+                break;
+            case NoteState.Normal:
+                NormalHit();
+                break;
+            default:
+                break;
+        }
     }
     public void NormalHit()
     {

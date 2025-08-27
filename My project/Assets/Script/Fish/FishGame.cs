@@ -66,10 +66,11 @@ public class FishGame : BeatGame
             if (mirrorScript.getCanHit())
             {
                 Debug.Log("Got it good");
-                NoteHit();
+                NoteHit(NoteState.Normal);
             }
             else
             {
+                Debug.Log("Missed");
                 NoteMissed();
             }
             anim_fishes[anim_fishes.Length - 1].Play("mirror_hit_anim");

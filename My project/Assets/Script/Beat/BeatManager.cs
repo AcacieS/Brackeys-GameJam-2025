@@ -48,13 +48,11 @@ public class BeatManager : MonoBehaviour
 
         if (_intervals[index_interval].getIsFinish()) //if current is Finish
         {
-            Debug.Log("Next");
+           // Debug.Log("Next");
             NextInterval();
         }
-        Debug.Log("here?");
         for (int i = 0; i < _intervals[index_interval].Size() && !isFinish; i++)
         {
-            Debug.Log("Current index intervals");
             float sampledTime = getSampledTime();
             _intervals[index_interval].getIntervals(i).CheckForNewInterval(sampledTime);
         }
@@ -183,7 +181,6 @@ public class Intervals
 
     public void CheckForNewInterval(float songPositionInBeats)
     {
-        Debug.Log("maybe is Finish" + isFinish);
         if (isFinish) return;
 
 
