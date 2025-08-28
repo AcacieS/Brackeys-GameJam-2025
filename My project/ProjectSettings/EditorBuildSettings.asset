@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Fish.unity
     guid: 0e77c343627bbab4ebf55f30edb6a2b4
   - enabled: 1
-    path: Assets/Scenes/Pig.unity
+    path: Assets/Scenes/Pig_Hard.unity
     guid: d9db82cd132b07c459ecce4281c9235e
   - enabled: 1
     path: Assets/Scenes/Turtle.unity

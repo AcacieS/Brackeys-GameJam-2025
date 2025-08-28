@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: c0eafc5cacffdb84fba02b3ff23db950
+guid: 37002481c30a56a41a7f5a4e531403cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1146327911830513464
-    second: imagepig_0
-  - first:
-      213: 6851956455805454979
-    second: imagepig_1
-  - first:
-      213: 6649139192716547435
-    second: imagepig_2
-  - first:
-      213: -7753609348161093863
-    second: imagepig_3
+      213: -429890163646538327
+    second: turtle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: imagepig_0
+      name: turtle_0
       rect:
         serializedVersion: 2
-        x: 634
-        y: 84
-        width: 500
-        height: 931
+        x: 0
+        y: 0
+        width: 110
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c81a3376dc6710f0800000000000000
-      internalID: -1146327911830513464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: imagepig_1
-      rect:
-        serializedVersion: 2
-        x: 904
-        y: 1014
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 38a8ab4e71a071f50800000000000000
-      internalID: 6851956455805454979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: imagepig_2
-      rect:
-        serializedVersion: 2
-        x: 621
-        y: 712
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b655ffbfddc764c50800000000000000
-      internalID: 6649139192716547435
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: imagepig_3
-      rect:
-        serializedVersion: 2
-        x: 1142
-        y: 714
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 91fb5b3d065a56490800000000000000
-      internalID: -7753609348161093863
+      spriteID: 9add96f7c29b80af0800000000000000
+      internalID: -429890163646538327
       vertices: []
       indices: 
       edges: []
@@ -209,11 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      imagepig_0: -1146327911830513464
-      imagepig_1: 6851956455805454979
-      imagepig_2: 6649139192716547435
-      imagepig_3: -7753609348161093863
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
