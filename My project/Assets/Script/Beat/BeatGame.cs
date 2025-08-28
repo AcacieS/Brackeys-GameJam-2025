@@ -102,8 +102,10 @@ public class BeatGame : BeatManager
     public override void OnSongFinished()
     {
         Debug.Log("current Score: " + currentScore);
+        base.OnSongFinished();
         GameManager.Instance.AddCoins(currentScore);
         SceneManager.LoadScene("Scenes/Shop");
+        
     }
 
     void Awake()

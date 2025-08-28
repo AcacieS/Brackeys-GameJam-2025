@@ -7,14 +7,19 @@ public class BeatManager : MonoBehaviour
     [SerializeField] protected float _bpm;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] protected Interval_Pattern[] _intervals;
+    [SerializeField] protected int index_interval = 0;
+
+    [Header("Beat Manager -- Wait")]
     [SerializeField] private bool hasWait = false;
     [SerializeField] private Intervals wait;
-    [SerializeField] protected int index_interval = 0;
+
+    [Header("Beat Manager -- Random")]
+    [SerializeField] private bool isRandom = false;
+
     private bool isFinish = false;
     private bool isSongFinish = false;
-    //private bool isWait = true;
     private bool waitStarted = false;
-    //private float lastSampledTime = 0f;
+
     private void Start()
     {
         if (_audioSource == null)
@@ -37,10 +42,9 @@ public class BeatManager : MonoBehaviour
     {
         UpdateOverride();
         // Check if the song finished
-        if (!_audioSource.isPlaying && !isSongFinish)
+        if (!_audioSource.isPlaying && !isSongFinish )
         {
             Debug.Log("Finish current Mini Game");
-            isSongFinish = true;
             OnSongFinished();
             return;
         }
@@ -59,23 +63,25 @@ public class BeatManager : MonoBehaviour
         
         
     }
-    public virtual void OnSongFinished()
-    {
-    }
+    
 
     private void NextInterval()
     {
+        if (isRandom)
+        {
+            RandomInterval();
+            return;
+        }
+
         if (index_interval + 1 < _intervals.Length)
         {
             //Debug.Log("is null: " + wait.isNull());
             if (hasWait && _intervals[index_interval].getIsWait()) //current wait = true;
             {
-                Debug.Log("Should NOTTT be here: " + wait);
                 Wait();
             }
             else if (!hasWait)
             {
-                Debug.Log("Should be here");
                 NextIntervalNoWait();
             }
         }
@@ -85,6 +91,15 @@ public class BeatManager : MonoBehaviour
         }
 
     }
+    //-------------------------------------------------------------------------- Random ---------------------------------------------------------------------
+    private void RandomInterval()
+    {
+        int index_chosen = Random.Range(0, _intervals.Length);
+        index_interval = index_chosen;
+        ResetInterval();
+    }
+    
+    //-------------------------------------------------------------------------- Wait ---------------------------------------------------------------------
     private void Wait()
     {
         //Wait Start the pattern Reset
@@ -104,19 +119,33 @@ public class BeatManager : MonoBehaviour
         {
 
             NextIntervalNoWait();
-            waitStarted = false; 
-            
+            waitStarted = false;
+
         }
 
         return; // stop here until wait is done
     }
+
     private void NextIntervalNoWait()
     {
         index_interval++;
-        float sampledTime3 = getSampledTime();
-            for (int i = 0; i < _intervals[index_interval].Size(); i++)
-                _intervals[index_interval].getIntervals(i).Reset(sampledTime3);
+        ResetInterval();
+        
     }
+    private void ResetInterval()
+    {
+        float sampledTime3 = getSampledTime();
+        for (int i = 0; i < _intervals[index_interval].Size(); i++)
+            _intervals[index_interval].getIntervals(i).Reset(sampledTime3);
+    }
+
+    //-------------------------------------------------------------------------- End ---------------------------------------------------------------------
+    public virtual void OnSongFinished()
+    {
+        isSongFinish = true;
+    }
+
+    //-------------------------------------------------------------------------- Helper ---------------------------------------------------------------------
     public float getSampledTime()
     {
         return _audioSource.timeSamples / (float)_audioSource.clip.frequency * (_bpm / 60f);
@@ -186,7 +215,7 @@ public class Intervals
 
         if (_patternIndex < _stepsSO.steps.Length && songPositionInBeats >= _nextBeat)
         {
-            Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
+            //Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
             OnEachBeat?.Invoke();
             _trigger.Invoke();
 

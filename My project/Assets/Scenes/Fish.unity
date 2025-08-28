@@ -1348,13 +1348,31 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  - sameTime_interval:
+    - _stepsSO: {fileID: 11400000, guid: 948c9b5d647b26e4c9a7ea8b6c335431, type: 2}
+      _trigger:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1352982268}
+            m_TargetAssemblyTypeName: FishGame, Assembly-CSharp
+            m_MethodName: AnimChoosenMask
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  index_interval: 0
   hasWait: 0
   wait:
     _stepsSO: {fileID: 0}
     _trigger:
       m_PersistentCalls:
         m_Calls: []
-  index_interval: 0
+  isRandom: 1
   audioHole: {fileID: 0}
   place: {x: 0, y: 0, z: 0}
   scoreUI: {fileID: 473432509}
@@ -1368,9 +1386,9 @@ MonoBehaviour:
   multiplierThresholds: 040000000800000010000000
   anim_fishes:
   - {fileID: 1290951382}
+  - {fileID: 1190201377}
   - {fileID: 302021486}
   - {fileID: 208263147}
-  - {fileID: 1190201377}
   - {fileID: 998988725}
   mirrorScript: {fileID: 998988726}
 --- !u!1 &1697354244

@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c210a3c989266c4999eb670c85a5411, type: 3}
-  m_Name: Pattern1
+  m_Name: Pattern12
   m_EditorClassIdentifier: 
-  max_pattern: 6
+  max_pattern: 12
   steps:
-  - 1
+  - 2
+  - 2
   - 1
   - 0.5
-  - 0.5
-  - 3
+  - 0.25
+  - 0.15
+  - 0.2
+  - 0.15
+  - 0.25
+  - 5.5
   isLooping: 0
