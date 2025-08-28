@@ -51,7 +51,6 @@ public class BeatManager : MonoBehaviour
             Debug.Log("Next");
             NextInterval();
         }
-        Debug.Log("here?");
         for (int i = 0; i < _intervals[index_interval].Size() && !isFinish; i++)
         {
             Debug.Log("Current index intervals");
