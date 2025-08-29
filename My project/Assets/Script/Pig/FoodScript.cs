@@ -6,7 +6,7 @@ public class FoodScript : MonoBehaviour
     private float beatTempo;
 
     private void Start() {
-        beatTempo = BeatGame.Instance.getBeat();
+        beatTempo = BeatGame.Current.getBeat();
     }
     private void Update() {
         transform.position += new Vector3(-1 * beatTempo * Time.deltaTime, 0f, 0f);

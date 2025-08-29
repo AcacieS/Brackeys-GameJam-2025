@@ -7,4 +7,5 @@ public class ClientSO : ScriptableObject
     public string scene;
     public string[] dialogue;
     public SpriteRenderer sprite;
+    public int nbTimeVisited;
 }

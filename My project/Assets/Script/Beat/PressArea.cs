@@ -32,17 +32,17 @@ public class PressArea : MonoBehaviour
         if (CondNormal())
         {
             Debug.Log("Normal Hit");
-            BeatGame.Instance.NormalHit();
+            BeatGame.Current.NormalHit();
         }
         else if (CondGood())
         {
             Debug.Log("Good Hit");
-            BeatGame.Instance.GoodHit();
+            BeatGame.Current.GoodHit();
         }
         else
         {
             Debug.Log("Perfect Hit");
-            BeatGame.Instance.PerfectHit();
+            BeatGame.Current.PerfectHit();
 
         }
         Destroy(CurrentNoteDetected);
@@ -78,7 +78,7 @@ public class PressArea : MonoBehaviour
             if (!CurrentNoteDetected)
             {
                 canBePressed = false;
-                BeatGame.Instance.NoteMissed();
+                BeatGame.Current.NoteMissed();
                 CurrentNoteDetected = null;
             }
             

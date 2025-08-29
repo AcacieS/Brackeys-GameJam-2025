@@ -7,13 +7,13 @@ public class ShopCoinsUI : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.Instance.OnCoinsChanged += UpdateCoinsUI;
+        GameManager.OnCoinsChanged += UpdateCoinsUI;
         UpdateCoinsUI(); // also update immediately in case coins changed before scene loaded
     }
 
     private void OnDisable()
     {
-        GameManager.Instance.OnCoinsChanged -= UpdateCoinsUI;
+        GameManager.OnCoinsChanged -= UpdateCoinsUI;
     }
 
     private void UpdateCoinsUI()

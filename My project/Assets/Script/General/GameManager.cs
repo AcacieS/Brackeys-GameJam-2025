@@ -1,5 +1,9 @@
 using System;
+using System.Collections;
+using TMPro;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,10 +12,10 @@ public class GameManager : MonoBehaviour
     private float maxArmHealth = 100f;
     public static float armHealth = 100f;
     public static Difficulty currentDifficulty = Difficulty.Easy;
-    public event Action OnCoinsChanged;
+    public static event Action OnCoinsChanged;
 
     [Header("UI")]
-    //[SerializeField] private TextMeshProUGUI coinsUI;
+    [SerializeField] private GameObject coinsUI;
     [SerializeField] private HealthBar healthBar;
 
     [Header("Client")]
@@ -21,6 +25,10 @@ public class GameManager : MonoBehaviour
     public Difficulty getDifficulty()
     {
         return currentDifficulty;
+    }
+    public void SetMiniGameDiff()
+    {
+        
     }
     public void SetMiniGameEasy()
     {
@@ -48,6 +56,24 @@ public class GameManager : MonoBehaviour
     {
         armHealth -= RemoveArmHealth;
         healthBar.SetHealth(armHealth);
+        if (armHealth <= 0.01)
+        {
+            Lost();
+        }
+    }
+    
+    private void Lost()
+    {
+        SceneManager.LoadScene("Scenes/Lost");
+    }
+    private IEnumerator RemoveArmHealthRate()
+    {
+        while (armHealth > 0)
+        {
+            Debug.Log("health?");
+            yield return new WaitForSeconds(1);
+            RemoveArmHealth(0.5f);
+        }
     }
 
     //--------------------------- Coins ---------------------------------------------
@@ -66,6 +92,11 @@ public class GameManager : MonoBehaviour
     }
     public void RemoveCoins(int RemoveCoins)
     {
+        if (coins - RemoveCoins < 0)
+        {
+            coinsUI.GetComponent<Animator>().Play("coins_red");
+            return;
+        }
         coins -= RemoveCoins;
         OnCoinsChanged?.Invoke();
         //coinsUI.text = coins.ToString();
@@ -74,9 +105,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         healthBar.SetMaxHealth(maxArmHealth);
+        StartCoroutine(RemoveArmHealthRate());
     }
-    
+
     //-------------------------- General ------------------------------------
+   
 
     void Awake()
     {
@@ -94,19 +127,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RemoveArmHealth(5);
-        }
     }
-    private void UIElement()
-    {
-        
-    }
+    
+    
 }

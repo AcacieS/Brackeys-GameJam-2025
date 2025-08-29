@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class BeatGame : BeatManager
 {
-    public static BeatGame Instance { get; private set; }
+    public static BeatGame Current { get; private set; }
 
     //[SerializeField] private Animator animBeat;
     [SerializeField] private AudioClip audioHole;
@@ -24,21 +24,60 @@ public class BeatGame : BeatManager
     [SerializeField] private int multiplierTracker;
     [SerializeField] private int[] multiplierThresholds;
 
+    [Header("Difficulty")]
+    [SerializeField] private ClientSO gameClientSO;
+    [SerializeField] private GameObject showDiffObj;
+    [SerializeField] private bool isTestDiff = false;
+    private bool showDiff = false;
 
     public override void StartOverride()
     {
         scoreUI.text = "Score: 0";
-        currentMultiplier = 1;  
+        currentMultiplier = 1;
+        setDiff();
     }
-    private void SpawnHole()
+    public override void UpdateOverride()
     {
-        Debug.Log("Spawn a hole at this beat");
-        // Instantiate your hole prefab here
+        if (showDiff)
+        {
+            ShowIfWantHard();
+        }
+        base.UpdateOverride();
+    }
+    private void setDiff()
+    {
+        if (gameClientSO != null)
+        {
+            int timeVisited = gameClientSO.nbTimeVisited;
+            if (timeVisited >= 3 || isTestDiff)
+            {
+                int isDifficult = Random.Range(0, 2);
+                if (isDifficult == 0 ||isTestDiff) //true
+                {
+                    showDiff = true;
+
+                }
+            }
+        }
+    }
+    public virtual void setHard()
+    {
+        currentDifficulty = Difficulty.Hard;
+        scorePerNote *= 2;
+        scorePerGoodNote *= 2;
+        scorePerPerfectNote *= 2;
     }
     
-    
-
-    
+    private void ShowIfWantHard()
+    {
+        float clipLength = _audioSource.clip.length;
+        float currentTime = _audioSource.time;
+        if (currentTime >= clipLength / 2)
+        {
+            showDiffObj.SetActive(true);
+            showDiff = false;
+        }
+    }
 
     public void NoteHit()
     {
@@ -57,7 +96,7 @@ public class BeatGame : BeatManager
                 currentMultiplier++;
             }
         }
-        
+
     }
     public void NoteHit(NoteState noteHitType)
     {
@@ -92,7 +131,7 @@ public class BeatGame : BeatManager
         currentScore += scorePerPerfectNote * currentMultiplier;
         NoteHit();
     }
-    public void NoteMissed()
+    public virtual void NoteMissed()
     {
         Debug.Log("Missed Note");
         multiplierTracker = 0;
@@ -105,22 +144,29 @@ public class BeatGame : BeatManager
         base.OnSongFinished();
         GameManager.Instance.AddCoins(currentScore);
         SceneManager.LoadScene("Scenes/Shop");
-        
+
     }
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            Debug.Log("GameManager created and will persist");
-        }
-        else if (Instance != this)
-        {
-            Debug.Log("Duplicate GameManager destroyed");
-            Destroy(gameObject);
+        Current = this;
+        // if (Instance == null)
+        // {
+        //     Instance = this;
+        //     Debug.Log("GameManager created and will persist");
+        // }
+        // else if (Instance != this)
+        // {
+        //     Debug.Log("Duplicate GameManager destroyed");
+        //     Destroy(gameObject);
 
-        }
+        // }
+    }
+    void OnDestroy()
+    {
+        // Clear reference if object is destroyed
+        if (Current == this)
+            Current = null;
     }
     
     

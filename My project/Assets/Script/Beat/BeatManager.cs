@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,17 +6,18 @@ public class BeatManager : MonoBehaviour
 {
     [Header("Beat Manager")]
     [SerializeField] protected float _bpm;
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] protected AudioSource _audioSource;
     [SerializeField] protected Interval_Pattern[] _intervals;
-    [SerializeField] protected int index_interval = 0;
+    protected int index_interval = 0;
 
     [Header("Beat Manager -- Wait")]
     [SerializeField] private bool hasWait = false;
-    [SerializeField] private Intervals wait;
+    [SerializeField] private Intervals[] wait;
+    protected int index_wait = 0;
 
     [Header("Beat Manager -- Random")]
     [SerializeField] private bool isRandom = false;
-
+    protected Difficulty currentDifficulty = Difficulty.Easy;
     private bool isFinish = false;
     private bool isSongFinish = false;
     private bool waitStarted = false;
@@ -35,14 +37,14 @@ public class BeatManager : MonoBehaviour
     }
     public float getBeat()
     {
-        return _bpm/60f;
+        return _bpm / 60f;
     }
 
     private void Update()
     {
         UpdateOverride();
         // Check if the song finished
-        if (!_audioSource.isPlaying && !isSongFinish )
+        if (!_audioSource.isPlaying && !isSongFinish)
         {
             Debug.Log("Finish current Mini Game");
             OnSongFinished();
@@ -52,7 +54,7 @@ public class BeatManager : MonoBehaviour
 
         if (_intervals[index_interval].getIsFinish()) //if current is Finish
         {
-           // Debug.Log("Next");
+            // Debug.Log("Next");
             NextInterval();
         }
         for (int i = 0; i < _intervals[index_interval].Size() && !isFinish; i++)
@@ -60,10 +62,10 @@ public class BeatManager : MonoBehaviour
             float sampledTime = getSampledTime();
             _intervals[index_interval].getIntervals(i).CheckForNewInterval(sampledTime);
         }
-        
-        
+
+
     }
-    
+
 
     private void NextInterval()
     {
@@ -94,11 +96,17 @@ public class BeatManager : MonoBehaviour
     //-------------------------------------------------------------------------- Random ---------------------------------------------------------------------
     private void RandomInterval()
     {
-        int index_chosen = Random.Range(0, _intervals.Length);
+        int max = _intervals.Length;
+        if (currentDifficulty == Difficulty.Hard)
+        {
+            max = 2;
+        }
+        int index_chosen = Random.Range(0, max);
         index_interval = index_chosen;
         ResetInterval();
     }
     
+
     //-------------------------------------------------------------------------- Wait ---------------------------------------------------------------------
     private void Wait()
     {
@@ -107,15 +115,15 @@ public class BeatManager : MonoBehaviour
         {
             Debug.Log("Wait Started Reset");
             float sampledTime = getSampledTime();
-            wait.Reset(sampledTime);
+            wait[index_wait].Reset(sampledTime);
             waitStarted = true;
         }
 
         // Keep ticking wait
         float sampledTime2 = getSampledTime();
-        wait.CheckForNewInterval(sampledTime2);
+        wait[index_wait].CheckForNewInterval(sampledTime2);
 
-        if (wait.getIsFinish())
+        if (wait[index_wait].getIsFinish())
         {
 
             NextIntervalNoWait();
@@ -130,7 +138,7 @@ public class BeatManager : MonoBehaviour
     {
         index_interval++;
         ResetInterval();
-        
+
     }
     private void ResetInterval()
     {
@@ -156,6 +164,7 @@ public class BeatManager : MonoBehaviour
 
 
     }
+    
 
 }
 [System.Serializable]
@@ -176,7 +185,6 @@ public class Interval_Pattern
     {
         return sameTime_interval[0].getIsFinish();
     }
-    
 
     public bool getIsWait()
     {

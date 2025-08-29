@@ -15,8 +15,8 @@ public class HoleScript : MonoBehaviour
     private void Start()
     {
         spawnPos = transform.position;
-        spawnBeat = BeatGame.Instance.getSampledTime(); 
-        targetBeat = BeatGame.Instance.getSampledTime() + 16;
+        spawnBeat = BeatGame.Current.getSampledTime(); 
+        targetBeat = BeatGame.Current.getSampledTime() + 16;
         // set target relative to spawn (example: move right by 16 units)
         targetPos = spawnPos + new Vector3(totalBeats, 0f, 0f);
         
@@ -25,7 +25,7 @@ public class HoleScript : MonoBehaviour
     private void Update()
     {
         // current song position in beats
-        songPosInBeats = BeatGame.Instance.getSampledTime();
+        songPosInBeats = BeatGame.Current.getSampledTime();
 
         // // normalize to 0..1 progress across totalBeats
         // float progress = (songPosInBeats - spawnBeat) / (targetBeat - spawnBeat);//Mathf.Clamp01((songPosInBeats - spawnBeat) / (targetBeat - spawnBeat));

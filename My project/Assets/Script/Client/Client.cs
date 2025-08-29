@@ -29,8 +29,8 @@ public class Client : MonoBehaviour
             int index_client = Random.Range(0, clientsSO.Length);
             currentClientSO = clientsSO[index_client];
         }
-        
-        Debug.Log("Current Client"+currentClientSO.clientName);
+
+        Debug.Log("Current Client" + currentClientSO.clientName);
         Restart();
     }
     private void Restart()
@@ -39,9 +39,14 @@ public class Client : MonoBehaviour
     }
     public void LoadMiniGame()
     {
+        currentClientSO.nbTimeVisited++;
         string sceneName = currentClientSO.scene;
         Debug.Log("sceneName: " + sceneName);
-        SceneManager.LoadScene("Scenes/"+sceneName);
+        SceneManager.LoadScene("Scenes/" + sceneName);
+    }
+    public ClientSO getCurrentClientSO()
+    {
+        return currentClientSO;
     }
     
     

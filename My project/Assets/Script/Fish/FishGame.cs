@@ -7,9 +7,9 @@ public class FishGame : BeatGame
     [SerializeField] private MirrorScript mirrorScript;
     private NoteState currentNoteState;
     private int anim_index = 0;
-    private bool isStart = true;
     private bool currentAlreadyHit = false;
     private bool canHit = false;
+    private bool isLeft = true;
 
     public override void StartOverride()
     {
@@ -19,6 +19,7 @@ public class FishGame : BeatGame
     {
         if (anim_index <= 3)
         {
+            mirrorScript.ResetIndex();
             MaskAnim();
         }
         else
@@ -32,9 +33,16 @@ public class FishGame : BeatGame
             else if (anim_index == 9)
             {
                 canHit = false;
-                if (!currentAlreadyHit) NoteMissed();
-
-                anim_fishes[4].Play("mirror_normal_anim");
+                if (!currentAlreadyHit)
+                {
+                    NoteMissed();
+                    mirrorScript.Anim_Side(isLeft);
+                    
+                }
+                else
+                {
+                    mirrorScript.Anim_Front();
+                }
                 currentAlreadyHit = false;
             }
         }
@@ -45,13 +53,20 @@ public class FishGame : BeatGame
         if (anim_index <= 3)
         {
             anim_fishes[anim_index].Play("mask_beat_anim");
+            mirrorScript.Anim_Front();
         }
     }
     private void SetNoteState()
     {
         canHit = true;
+        if (anim_index == 4)
+        {
+            int isLeftRand = Random.Range(0, 2);
+            isLeft = isLeftRand == 0 ? true : false;
+        }
         if (anim_index == 4 || anim_index == 8)
         {
+            NoteMissed();
             Debug.Log("Normal");
             currentNoteState = NoteState.Normal;
         }
@@ -68,8 +83,7 @@ public class FishGame : BeatGame
     }
     private void ShowMirror()
     {
-        anim_fishes[4].Play("mirror_showFishBlue_anim");
-
+        mirrorScript.Anim_Side(isLeft);
     }
     public override void UpdateOverride()
     {
@@ -85,46 +99,10 @@ public class FishGame : BeatGame
                 Debug.Log("Missed");
                 NoteMissed();
             }
-            anim_fishes[anim_fishes.Length - 1].GetComponent<Animator>().Play("mirror_hit_anim");
+            mirrorScript.Anim_Hit();
             currentAlreadyHit = true;
         }
 
         base.UpdateOverride(); // only if needed
     }
-     // //Mirror Animation
-        // if (anim_index == anim_fishes.Length - 1)
-        // {
-        //     ShowMirror();
-        // }
-        // else //Mask Animation
-        // {
-        //     if (anim_index == 0 && !isStart && !currentAlreadyHit)
-        //     {
-        //         //Show not good
-        //         NoteMissed();
-        //     }
-        //     else if (anim_index == 0 && !isStart)
-        //     {
-        //         anim_fishes[anim_index].GetComponent<Animator>().Play("mirror_normal_anim");
-        //     }
-
-        //     if (anim_index == 0)
-        //     {
-        //         currentAlreadyHit = false;
-        //     }
-        //     else
-        //     {
-
-        //         anim_fishes[anim_index].GetComponent<Animator>().Play("mirror_normal_anim");
-        //     }
-
-        //     if (isStart)
-        //     {
-        //         isStart = false;
-        //     }
-
-        //     anim_fishes[anim_index].GetComponent<Animator>().Play("mask_beat_anim");
-        //     anim_index = (anim_index + 1) % anim_fishes.Length;
-
-        // }
 }

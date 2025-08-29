@@ -10,12 +10,14 @@ public class ShopInterface : MonoBehaviour
     [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private TextMeshProUGUI cost;
     [SerializeField] private TextMeshProUGUI itemName;
+    [SerializeField] private GameObject payButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GetComponent<Image>().sprite = shopSO.itemImg;
         cost.text = shopSO.cost.ToString();
+    
     }
 
     // Update is called once per frame
@@ -27,5 +29,7 @@ public class ShopInterface : MonoBehaviour
     {
         description.text = shopSO.description;
         itemName.text = shopSO.itemName;
+        payButton.SetActive(true);
+        payButton.GetComponent<PayButtonScript>().SetCurrentPay(shopSO.cost);
     }
 }
