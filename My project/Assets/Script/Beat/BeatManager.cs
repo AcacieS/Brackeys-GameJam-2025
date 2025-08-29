@@ -117,21 +117,25 @@ public class BeatManager : MonoBehaviour
             float sampledTime = getSampledTime();
             wait[index_wait].Reset(sampledTime);
             waitStarted = true;
-        }
 
+        }
+        
         // Keep ticking wait
         float sampledTime2 = getSampledTime();
         wait[index_wait].CheckForNewInterval(sampledTime2);
 
         if (wait[index_wait].getIsFinish())
         {
-
+            eachInterval();
             NextIntervalNoWait();
             waitStarted = false;
 
         }
 
         return; // stop here until wait is done
+    }
+    public virtual void eachInterval() {
+        
     }
 
     private void NextIntervalNoWait()
@@ -249,7 +253,7 @@ public class Intervals
         }
         if (_patternIndex >= _stepsSO.steps.Length && _stepsSO.isLooping)
         {
-            Debug.Log("hey looping");
+            //Debug.Log("hey looping");
             _patternIndex = 0;
         }
 

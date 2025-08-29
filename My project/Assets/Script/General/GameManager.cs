@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using TMPro;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,20 +23,6 @@ public class GameManager : MonoBehaviour
     public Difficulty getDifficulty()
     {
         return currentDifficulty;
-    }
-    public void SetMiniGameDiff()
-    {
-        
-    }
-    public void SetMiniGameEasy()
-    {
-        currentDifficulty = Difficulty.Easy;
-        clientScript.LoadMiniGame();
-    }
-    public void SetMiniGameHard()
-    {
-        currentDifficulty = Difficulty.Hard;
-        clientScript.LoadMiniGame();
     }
 
     //--------------------------- Arm Health ---------------------------------------------

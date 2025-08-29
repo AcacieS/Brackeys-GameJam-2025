@@ -81,7 +81,7 @@ public class BeatGame : BeatManager
 
     public void NoteHit()
     {
-        Debug.Log("Hit On Time");
+        //Debug.Log("Hit On Time");
         Multiplier();
         multiplierUI.text = "Multiplier: x" + currentMultiplier;
         scoreUI.text = "Score: " + currentScore.ToString();

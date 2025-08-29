@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218903141b1460a4bb2e7298172e6fbc, type: 3}
   m_Name: Dog
   m_EditorClassIdentifier: 
-  clientName: 
+  clientName: Dog
   scene: Dog
-  dialogue: []
   sprite: {fileID: 0}
+  nbTimeVisited: 0
+  transition: {fileID: 0}
+  dialogue: []

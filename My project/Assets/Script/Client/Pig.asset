@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218903141b1460a4bb2e7298172e6fbc, type: 3}
   m_Name: Pig
   m_EditorClassIdentifier: 
-  clientName: 
+  clientName: Pig
   scene: Pig
+  sprite: {fileID: 8569328101080947559, guid: 1f06cc6d577c7cd48af673135aa9cab0, type: 3}
+  nbTimeVisited: 0
+  transition: {fileID: 8569328101080947559, guid: 1f06cc6d577c7cd48af673135aa9cab0, type: 3}
+  position: {x: -130, y: -2, z: 0}
+  scale: {x: 0.56, y: 1, z: 1}
   dialogue: []
-  sprite: {fileID: 0}

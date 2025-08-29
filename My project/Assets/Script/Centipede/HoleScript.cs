@@ -6,8 +6,8 @@ public class HoleScript : MonoBehaviour
     private Vector3 spawnPos;
     private Vector3 targetPos;
     private float songPosInBeats;
-    public float spawnBeat;   // the beat when this hole spawns
-    public float targetBeat;   // the beat when it should reach the target
+    private float spawnBeat;   // the beat when this hole spawns
+    //private float targetBeat;   // the beat when it should reach the target
 
     // how many beats it takes to move from spawn to target
     [SerializeField] private int totalBeats = 16;
@@ -15,11 +15,11 @@ public class HoleScript : MonoBehaviour
     private void Start()
     {
         spawnPos = transform.position;
-        spawnBeat = BeatGame.Current.getSampledTime(); 
-        targetBeat = BeatGame.Current.getSampledTime() + 16;
+        spawnBeat = BeatGame.Current.getSampledTime();
+        //targetBeat = BeatGame.Current.getSampledTime() + 16;
         // set target relative to spawn (example: move right by 16 units)
         targetPos = spawnPos + new Vector3(totalBeats, 0f, 0f);
-        
+
     }
 
     private void Update()
@@ -38,5 +38,6 @@ public class HoleScript : MonoBehaviour
         // move directly relative to beats
         transform.position = spawnPos + new Vector3(beatsPassed, 0f, 0f);
     }
+    
   
 }
