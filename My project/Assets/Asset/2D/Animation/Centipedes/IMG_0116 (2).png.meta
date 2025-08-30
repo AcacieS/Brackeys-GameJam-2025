@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Centipedes/IMG_0116 (2).png.meta
 guid: 44f3a8598679a9444b8ef80dfc68a97e
 TextureImporter:
   internalIDToNameTable:
@@ -18,17 +17,6 @@ TextureImporter:
   - first:
       213: 8958992853052450524
     second: IMG_0116 (2)_4
-========
-guid: aa9903cca06133f4cb610c01bf3a7be9
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3392100986958533579
-    second: IMG_0153_0
-  - first:
-      213: 7987613358597044930
-    second: IMG_0153_1
->>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Jumping/pigJumping.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -120,11 +108,23 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Centipedes/IMG_0116 (2).png.meta
       name: IMG_0116 (2)_0
       rect:
         serializedVersion: 2
@@ -132,15 +132,6 @@ TextureImporter:
         y: 1480
         width: 221
         height: 93
-========
-      name: IMG_0153_0
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 1095
-        width: 103
-        height: 100
->>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Jumping/pigJumping.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,19 +140,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Centipedes/IMG_0116 (2).png.meta
       spriteID: de6cf017caab7b54eabdd52d1af318f8
       internalID: -2119386206
-========
-      spriteID: 53ca51edf16dce0d0800000000000000
-      internalID: -3392100986958533579
->>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Jumping/pigJumping.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Centipedes/IMG_0116 (2).png.meta
       name: IMG_0116 (2)_1
       rect:
         serializedVersion: 2
@@ -169,15 +154,6 @@ TextureImporter:
         y: 707
         width: 112
         height: 126
-========
-      name: IMG_0153_1
-      rect:
-        serializedVersion: 2
-        x: 738
-        y: 150
-        width: 788
-        height: 1468
->>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Jumping/pigJumping.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,7 +162,6 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Centipedes/IMG_0116 (2).png.meta
       spriteID: 9eafea082917325458185a24188e6926
       internalID: -1446170361
       vertices: []
@@ -255,10 +230,6 @@ TextureImporter:
       bones: []
       spriteID: 455758e4f3d6b2b4880bd57d41710955
       internalID: 924528223
-========
-      spriteID: 2ca775a8704b9de60800000000000000
-      internalID: 7987613358597044930
->>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Jumping/pigJumping.png.meta
       vertices: []
       indices: 
       edges: []
@@ -277,16 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Centipedes/IMG_0116 (2).png.meta
       IMG_0116 (2)_0: -2119386206
       IMG_0116 (2)_1: -1446170361
       IMG_0116 (2)_2: 772958711
       IMG_0116 (2)_3: -1704840792
       IMG_0116 (2)_4: 924528223
-========
-      IMG_0153_0: -3392100986958533579
-      IMG_0153_1: 7987613358597044930
->>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Jumping/pigJumping.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
