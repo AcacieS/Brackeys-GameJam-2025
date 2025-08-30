@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Note
   - Trigger
+  - Hole
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class PressArea : MonoBehaviour
@@ -27,18 +25,19 @@ public class PressArea : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToPress))
         {
-            //Audio
-            audio.clip = audioClip;
-            audio.Play();
+            
 
             if (canBePressed && OtherCondition())
             {
-                
+                //Audio
+                audio.clip = audioClip;
+                audio.Play();
                 SpawnThing();
                 PressAtArea();
             }
             else
             {
+                
                 SpecialPropertyWaitCome();
                 BeatGame.Current.NoteMissed();
                 Debug.Log("cannot spawn");
@@ -121,6 +120,7 @@ public class PressArea : MonoBehaviour
                 BeatGame.Current.NoteMissed();
                 CurrentNoteDetected = null;
             }
+            Debug.Log("Detected Note");
             OnTriggerExitProperty();
             canBePressed = false;
         }

@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6350477649937627101}
   - component: {fileID: 9170851850378349794}
-  - component: {fileID: 9121227168124511192}
   - component: {fileID: 2588461702536750775}
   - component: {fileID: 1223570522353608140}
+  - component: {fileID: 8003796915616188082}
   m_Layer: 0
   m_Name: Hole
-  m_TagString: Note
+  m_TagString: Hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,19 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9121227168124511192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4183672253264190677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3271e79de7357d42b18427e7926ebbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalBeats: 16
 --- !u!58 &2588461702536750775
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -166,3 +153,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8003796915616188082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183672253264190677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a691afaf646d2204c8a2a09c77bc7bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn: {fileID: 0}

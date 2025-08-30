@@ -144,7 +144,6 @@ public class BeatGame : BeatManager
         base.OnSongFinished();
         GameManager.Instance.AddCoins(currentScore);
         SceneManager.LoadScene("Scenes/Shop");
-
     }
 
     void Awake()
