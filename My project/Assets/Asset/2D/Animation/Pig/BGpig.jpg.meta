@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: dd4ac91bf25df3e4b916f596dac77d17
+guid: 73898d58b86d98e429fe3c7a9d6db4b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3392100986958533579
-    second: IMG_0153_0
-  - first:
-      213: 7987613358597044930
-    second: IMG_0153_1
+      213: 8763257642341426739
+    second: BGpig_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0153_0
+      name: BGpig_0
       rect:
         serializedVersion: 2
-        x: 220
-        y: 1095
-        width: 103
-        height: 100
+        x: 0
+        y: 0
+        width: 1980
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53ca51edf16dce0d0800000000000000
-      internalID: -3392100986958533579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0153_1
-      rect:
-        serializedVersion: 2
-        x: 738
-        y: 150
-        width: 788
-        height: 1468
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ca775a8704b9de60800000000000000
-      internalID: 7987613358597044930
+      spriteID: 336ecfe55685d9970800000000000000
+      internalID: 8763257642341426739
       vertices: []
       indices: 
       edges: []
@@ -172,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jump pig_0: 1232339496130770797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
