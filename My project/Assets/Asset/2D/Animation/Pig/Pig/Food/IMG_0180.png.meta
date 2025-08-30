@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a4ff484657430cc4398058f5408cfc98
+guid: ffc4f86480720f64ca272734b26882d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2973093552332344111
-    second: IMG_0155_0
+      213: 6858641643160595763
+    second: IMG_0180_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0155_0
+      name: IMG_0180_0
       rect:
         serializedVersion: 2
-        x: 829
-        y: 130
-        width: 808
-        height: 1421
+        x: 610
+        y: 114
+        width: 1017
+        height: 1374
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2b06ce65dc824920800000000000000
-      internalID: 2973093552332344111
+      spriteID: 33de94e5c3ace2f50800000000000000
+      internalID: 6858641643160595763
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      eating pig2_0: -3255276812443253996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
