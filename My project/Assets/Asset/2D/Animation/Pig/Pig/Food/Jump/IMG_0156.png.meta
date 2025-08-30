@@ -116,10 +116,10 @@ TextureImporter:
       name: IMG_0156_0
       rect:
         serializedVersion: 2
-        x: 889
-        y: 134
-        width: 742
-        height: 1382
+        x: 0
+        y: 0
+        width: 2420
+        height: 1668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: becf6f096f2a49e4ca20ed55ad2595ab
     internalID: 0
     vertices: []
     indices: 

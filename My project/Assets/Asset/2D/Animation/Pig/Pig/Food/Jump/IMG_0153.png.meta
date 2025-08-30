@@ -119,42 +119,20 @@ TextureImporter:
       name: IMG_0153_0
       rect:
         serializedVersion: 2
-        x: 220
-        y: 1095
-        width: 103
-        height: 100
+        x: 0
+        y: 0
+        width: 2420
+        height: 1668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 53ca51edf16dce0d0800000000000000
-      internalID: -3392100986958533579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0153_1
-      rect:
-        serializedVersion: 2
-        x: 738
-        y: 150
-        width: 788
-        height: 1468
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ca775a8704b9de60800000000000000
-      internalID: 7987613358597044930
+      spriteID: d5fa265b41c69ff4b9ffd035fe8b2ae9
+      internalID: 2101953221
       vertices: []
       indices: 
       edges: []
@@ -163,7 +141,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e1071026a6c5a841b57c33fd608b05e
     internalID: 0
     vertices: []
     indices: 
@@ -173,9 +151,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_0114_0: -8341753371012615438
-      IMG_0114_1: 4533756324459929956
-      IMG_0114_2: -5950926967449696392
+      IMG_0153_0: 2101953221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
