@@ -1,0 +1,261 @@
+fileFormatVersion: 2
+guid: 00c4ff46a1fe6ba428962a802eb82c25
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9044629559978073560
+    second: centipede_0
+  - first:
+      213: 2109299747108509316
+    second: centipede_1
+  - first:
+      213: 877020634850137965
+    second: centipede_2
+  - first:
+      213: -7648964916667599285
+    second: centipede_3
+  - first:
+      213: -8493086357551926197
+    second: centipede_4
+  - first:
+      213: 390882393702701962
+    second: centipede_5
+  - first:
+      213: -7814048128057714621
+    second: centipede_6
+  - first:
+      213: 4008840086474894672
+    second: centipede_7
+  - first:
+      213: -1066638019318754339
+    second: centipede_8
+  - first:
+      213: 5883016609214407519
+    second: centipede_9
+  - first:
+      213: -1201787674484755631
+    second: centipede_10
+  - first:
+      213: 1715524048132405162
+    second: centipede_11
+  - first:
+      213: 379272771668154552
+    second: centipede_12
+  - first:
+      213: 1646276880305036492
+    second: centipede_13
+  - first:
+      213: 927841430406191603
+    second: centipede_14
+  - first:
+      213: 1253212305806635804
+    second: centipede_15
+  - first:
+      213: -1975148809170257086
+    second: centipede_16
+  - first:
+      213: 4526254158505599139
+    second: centipede_17
+  - first:
+      213: 8246314178516341281
+    second: centipede_18
+  - first:
+      213: -370104410117598423
+    second: centipede_19
+  - first:
+      213: -5350225501186114348
+    second: centipede_20
+  - first:
+      213: -4731582546347473682
+    second: centipede_21
+  - first:
+      213: 419923522494216300
+    second: centipede_22
+  - first:
+      213: -6592097867373686098
+    second: centipede_23
+  - first:
+      213: -4520923962907556060
+    second: centipede_24
+  - first:
+      213: -2045104172231221910
+    second: centipede_25
+  - first:
+      213: -719205893366992831
+    second: centipede_26
+  - first:
+      213: 1460517629626238150
+    second: centipede_27
+  - first:
+      213: -1021993499698051357
+    second: centipede_28
+  - first:
+      213: 3850021104858321948
+    second: centipede_29
+  - first:
+      213: 3348214374595263241
+    second: centipede_30
+  - first:
+      213: -5528778767966700289
+    second: centipede_31
+  - first:
+      213: -6623203475781028093
+    second: centipede_32
+  - first:
+      213: -2716551689418455060
+    second: centipede_33
+  - first:
+      213: -754287812931644186
+    second: centipede_34
+  - first:
+      213: 1804440358383285136
+    second: centipede_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: centipede_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2420
+        height: 1668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed64687564a42244fab0ea6635e5c4e3
+      internalID: 1573225520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b35a487924440c948aa41ac7a6260cbe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      centipede_0: 1573225520
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

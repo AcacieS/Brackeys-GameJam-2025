@@ -1,22 +1,33 @@
+
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Client : MonoBehaviour
 {
     [Header("Client")]
     [SerializeField] private ClientSO[] clientsSO;
-    [SerializeField] private ClientSO currentClientSO;
+    [SerializeField] private ClientSO testClient;
+    [SerializeField] public static ClientSO currentClientSO;
 
     [Header("General")]
     [SerializeField] private SceneManagement sceneManagement;
     [SerializeField] private endTransition endTrans;
     [SerializeField] private bool isFinish = false;
-
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI RuleUI;
+    [SerializeField] private Image NameRule;
+    [SerializeField] private GameObject play;
+    private Animator anim;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpawnClient();
+        anim = GetComponent<Animator>();
+        QuitShop();
+
     }
 
     // Update is called once per frame
@@ -24,13 +35,56 @@ public class Client : MonoBehaviour
     {
 
     }
-    private void SpawnClient()
+    private void QuitShop()
     {
-        if (currentClientSO == null)
+        if (currentClientSO != null)
+        {
+            if (GameManager.Instance.getDifficulty() == Difficulty.Easy)
+            {
+                play.SetActive(false);
+                anim.Play("Client Quit");
+            }
+            else
+            {
+                if (GameManager.Instance.GetWinHard()) //you win -> client die
+                {
+                    play.SetActive(false);
+                    anim.Play("Client Die");
+                }
+                else //you lost -> lost health
+                {
+                    Debug.Log("losttt");
+                    GameManager.Instance.RemoveArmHealth(10);
+                    play.SetActive(false);
+                    anim.Play("Client Quit");
+                    GameManager.Instance.WinMiniGame(true);
+                }
+            }
+            
+            
+        }
+        else
+        {
+            SpawnClient();
+        }
+    }
+    public void SpawnClient()
+    {
+        if (testClient == null)
         {
             int index_client = Random.Range(0, clientsSO.Length);
             currentClientSO = clientsSO[index_client];
+            Debug.Log("which client? " + currentClientSO.name);
         }
+        else
+        {
+            currentClientSO = testClient;
+            
+        }
+        GetComponent<SpriteRenderer>().sprite = currentClientSO.sprite;
+        anim.Play("Client Enter");
+        ShowGameRule();
+        play.SetActive(true);
 
         Debug.Log("Current Client" + currentClientSO.clientName);
         Restart();
@@ -54,6 +108,12 @@ public class Client : MonoBehaviour
     public ClientSO getCurrentClientSO()
     {
         return currentClientSO;
+    }
+    public void ShowGameRule()
+    {
+        NameRule.sprite = currentClientSO.gameName;
+        RuleUI.text = currentClientSO.rule;
+        play.SetActive(true);
     }
     
     
