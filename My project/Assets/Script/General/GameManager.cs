@@ -11,18 +11,30 @@ public class GameManager : MonoBehaviour
     public static float armHealth = 100f;
     public static Difficulty currentDifficulty = Difficulty.Easy;
     public static event Action OnCoinsChanged;
+    public static event Action OnHealthChanged;
+
 
     [Header("UI")]
     [SerializeField] private GameObject coinsUI;
-    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private float removeArmHealthRate = 0.5f;
+   // [SerializeField] private HealthBar healthBar;
 
     [Header("Client")]
     [SerializeField] private Client clientScript;
+    private bool winHard = true;
 
     //--------------------------- Difficulty -------------------------------------
     public Difficulty getDifficulty()
     {
         return currentDifficulty;
+    }
+    public void WinMiniGame(bool isWin)
+    {
+        winHard = isWin;
+    }
+    public bool GetWinHard()
+    {
+        return winHard;
     }
 
     //--------------------------- Arm Health ---------------------------------------------
@@ -30,21 +42,27 @@ public class GameManager : MonoBehaviour
     {
         return armHealth;
     }
+    public float GetMaxArmHealth()
+    {
+        return maxArmHealth;
+    }
     public void AddArmHealth(float AddArmHealth)
     {
         armHealth += AddArmHealth;
-        healthBar.SetHealth(armHealth);
-        
+        OnHealthChanged?.Invoke();
+        // healthBar.SetHealth(armHealth);
+
     }
     public void RemoveArmHealth(float RemoveArmHealth)
     {
         armHealth -= RemoveArmHealth;
-        healthBar.SetHealth(armHealth);
+        OnHealthChanged?.Invoke();
         if (armHealth <= 0.01)
         {
             Lost();
         }
     }
+    
     
     private void Lost()
     {
@@ -54,9 +72,8 @@ public class GameManager : MonoBehaviour
     {
         while (armHealth > 0)
         {
-            Debug.Log("health?");
             yield return new WaitForSeconds(1);
-            RemoveArmHealth(0.5f);
+            RemoveArmHealth(removeArmHealthRate);
         }
     }
 
@@ -88,7 +105,7 @@ public class GameManager : MonoBehaviour
     //------------------------- Client Spawn -------------------------
     void Start()
     {
-        healthBar.SetMaxHealth(maxArmHealth);
+        
         StartCoroutine(RemoveArmHealthRate());
     }
 

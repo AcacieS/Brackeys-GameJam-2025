@@ -21,6 +21,7 @@ public class BeatManager : MonoBehaviour
     private bool isFinish = false;
     private bool isSongFinish = false;
     private bool waitStarted = false;
+    
 
     private void Start()
     {

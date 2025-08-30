@@ -17,4 +17,7 @@ MonoBehaviour:
   sprite: {fileID: 582818432, guid: 4f184420dd26f14418360762bf5ce14c, type: 3}
   nbTimeVisited: 0
   transition: {fileID: -181154881, guid: 8a00c73c9600b894c9c9bdf87e2ffa52, type: 3}
-  dialogue: []
+  position: {x: 0, y: 0, z: 0}
+  scale: {x: 0, y: 0, z: 0}
+  gameName: {fileID: 21300000, guid: 9d063b79be80b2b4886e4c74b45f8a29, type: 3}
+  rule: Press [Space] to hit at the right time following the mirrors.

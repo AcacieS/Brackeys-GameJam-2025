@@ -55,7 +55,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Clinet_Quit_anim
+  m_Name: Client Quit
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -85,13 +85,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5461386711026116963}
-    m_Position: {x: 230, y: 120, z: 0}
+    m_Position: {x: 290, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1031168628734725276}
     m_Position: {x: 460, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8667251490387335058}
-    m_Position: {x: 460, y: 120, z: 0}
+    m_Position: {x: 520, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3405253787633592421}
     m_Position: {x: 460, y: 200, z: 0}
@@ -104,7 +104,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 20, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 5461386711026116963}
+  m_DefaultState: {fileID: -3405253787633592421}
 --- !u!1102 &5461386711026116963
 AnimatorState:
   serializedVersion: 6
@@ -112,7 +112,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Client_Enter_anim
+  m_Name: Client Enter
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
