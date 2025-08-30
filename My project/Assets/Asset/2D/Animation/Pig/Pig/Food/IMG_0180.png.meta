@@ -1,10 +1,25 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+=======
+<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Pig/Pig/Idle/pigIdle.png.meta
+guid: 724a863a7bd60564ab04198ae0121052
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2998630966923923623
+    second: IMG_0194 (1)_0
+========
+>>>>>>> Stashed changes
 guid: ffc4f86480720f64ca272734b26882d0
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6858641643160595763
     second: IMG_0180_0
+<<<<<<< Updated upstream
+=======
+>>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Food/IMG_0180.png.meta
+>>>>>>> Stashed changes
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,6 +111,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -109,10 +125,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+>>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<< Updated upstream
+=======
+<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Pig/Pig/Idle/pigIdle.png.meta
+      name: IMG_0194 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 153
+        width: 793
+        height: 1471
+========
+>>>>>>> Stashed changes
       name: IMG_0180_0
       rect:
         serializedVersion: 2
@@ -120,6 +150,10 @@ TextureImporter:
         y: 114
         width: 1017
         height: 1374
+<<<<<<< Updated upstream
+=======
+>>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Food/IMG_0180.png.meta
+>>>>>>> Stashed changes
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +162,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<< Updated upstream
       spriteID: 33de94e5c3ace2f50800000000000000
       internalID: 6858641643160595763
+=======
+<<<<<<<< Updated upstream:My project/Assets/Asset/2D/Animation/Pig/Pig/Idle/pigIdle.png.meta
+      spriteID: 95f6304e509b266d0800000000000000
+      internalID: -2998630966923923623
+========
+      spriteID: 33de94e5c3ace2f50800000000000000
+      internalID: 6858641643160595763
+>>>>>>>> Stashed changes:My project/Assets/Asset/2D/Animation/Pig/Pig/Food/IMG_0180.png.meta
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -148,7 +192,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<< Updated upstream
       eating pig2_0: -3255276812443253996
+=======
+      IMG_0194 (1)_0: -2998630966923923623
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
