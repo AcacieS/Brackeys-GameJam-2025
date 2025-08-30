@@ -49,128 +49,118 @@ public class PressandAnimation : MonoBehaviour
                 spriteRenderer1.enabled = true;
                 spriteRenderer1.sprite = pigIdle;
                 spriteRenderer2.enabled = false;
+
                 if (Input.GetKeyDown(KeyCode.J))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 1;
+                    StartCoroutine(DelayStateChange(1, 0.2f));
                 }
                 else if (Input.GetKeyDown(KeyCode.F))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 3;
-                }
-                else
-                {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    break;
+                    StartCoroutine(DelayStateChange(3, 0.2f));
                 }
                 break;
+
             case 1:
                 spriteRenderer1.enabled = true;
                 spriteRenderer1.sprite = pigEating1;
                 spriteRenderer2.enabled = false;
+
                 if (Input.GetKeyDown(KeyCode.J))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    break;
+                    StartCoroutine(DelayStateChange(1, 0.2f)); 
                 }
                 else if (Input.GetKeyDown(KeyCode.F))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 3;
+                    StartCoroutine(DelayStateChange(3, 0.2f)); 
                 }
                 else
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 2;
+                    StartCoroutine(DelayStateChange(2, 0.2f)); 
                 }
                 break;
+
             case 2:
                 spriteRenderer1.enabled = true;
                 spriteRenderer1.sprite = pigEating2;
                 spriteRenderer2.enabled = false;
+
                 if (Input.GetKeyDown(KeyCode.J))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 1;
+                    StartCoroutine(DelayStateChange(1, 0.2f)); 
                 }
                 else if (Input.GetKeyDown(KeyCode.F))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 3;
+                    StartCoroutine(DelayStateChange(3, 0.2f)); 
                 }
                 else
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 0;
+                    StartCoroutine(DelayStateChange(0, 0.2f)); 
                 }
                 break;
+
             case 3:
                 spriteRenderer1.enabled = true;
-                spriteRenderer1.sprite = pigJumping;
                 spriteRenderer2.enabled = false;
-                AnimationState.stateOfGame = 4;
-                StartCoroutine(DelayStateChange(1, 0.5f));
+                spriteRenderer1.sprite = pigJumping;
+                StartCoroutine(DelayStateChange(4, 0.05f));
                 break;
+
             case 4:
                 spriteRenderer1.enabled = false;
                 spriteRenderer2.enabled = true;
                 spriteRenderer2.sprite = pigEating1;
+
                 if (Input.GetKeyDown(KeyCode.J))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 1;
+                    StartCoroutine(DelayStateChange(1, 0.1f));
                 }
                 else if (Input.GetKeyDown(KeyCode.F))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 4;
+                    StartCoroutine(DelayStateChange(4, 0.1f));
                 }
                 else
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 5;
+                    StartCoroutine(DelayStateChange(5, 0.1f));
                 }
                 break;
+
             case 5:
                 spriteRenderer2.enabled = true;
                 spriteRenderer1.enabled = false;
                 spriteRenderer2.sprite = pigEating2;
+
                 if (Input.GetKeyDown(KeyCode.J))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 1;
+                    StartCoroutine(DelayStateChange(1, 0.1f));
                 }
                 else if (Input.GetKeyDown(KeyCode.F))
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 4;
+                    StartCoroutine(DelayStateChange(4, 0.1f));
                 }
                 else
                 {
-                    StartCoroutine(DelayStateChange(1, 0.5f));
-                    AnimationState.stateOfGame = 0;
+                    StartCoroutine(DelayStateChange(0, 0.1f));
                 }
                 break;
         }
-        if (Input.GetKeyDown(keyToPress))
-        {
-            if (canBePressed)
-            {
-                
-                PressAtArea();
-            }
 
+        if (Input.GetKeyDown(keyToPress) && canBePressed)
+        {
+            PressAtArea();
         }
     }
 
+
     IEnumerator DelayStateChange(int nextState, float delay)
     {
+        if (isDelaying) yield break; 
+
         isDelaying = true;
         yield return new WaitForSeconds(delay);
         AnimationState.stateOfGame = nextState;
         isDelaying = false;
     }
+
     private void PressAtArea()
     {
         //CentipedeGame.Instance.NoteHit();
