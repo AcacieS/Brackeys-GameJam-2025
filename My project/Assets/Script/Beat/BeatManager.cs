@@ -53,15 +53,33 @@ public class BeatManager : MonoBehaviour
         }
 
 
-        if (_intervals[index_interval].getIsFinish()) //if current is Finish
+        if (_intervals == null || _intervals.Length == 0)
+            return;
+
+        // Clamp index_interval to valid range
+        index_interval = Mathf.Clamp(index_interval, 0, _intervals.Length - 1);
+
+        // If the current interval is finished, move to the next one
+        if (_intervals[index_interval].getIsFinish())
         {
-            // Debug.Log("Next");
-            NextInterval();
+            index_interval++;  // move to next
+            if (index_interval >= _intervals.Length)
+            {
+                // Reached the end, optionally reset to 0 to loop
+                index_interval = 0;
+            }
         }
+
+        // Loop through current interval's sub-intervals
         for (int i = 0; i < _intervals[index_interval].Size() && !isFinish; i++)
         {
             float sampledTime = getSampledTime();
-            _intervals[index_interval].getIntervals(i).CheckForNewInterval(sampledTime);
+
+            var subInterval = _intervals[index_interval].getIntervals(i);
+            if (subInterval != null)
+            {
+                subInterval.CheckForNewInterval(sampledTime);
+            }
         }
 
 
