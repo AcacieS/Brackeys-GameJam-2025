@@ -11,6 +11,7 @@ TagManager:
   - Trigger2
   - Trigger3
   - Trigger4
+  - flask
   layers:
   - Default
   - TransparentFX

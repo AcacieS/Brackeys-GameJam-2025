@@ -17,7 +17,7 @@ public class PressArea : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
     }
-
+    private bool isGood;
 
     //---------------------------------------------------------------------------------- Press Area -----------------------------------------------------------------------------
     // Update is called once per frame

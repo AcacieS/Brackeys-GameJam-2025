@@ -7,6 +7,7 @@ public class TriggerImageChanger : MonoBehaviour
     [SerializeField] private Sprite sprite2;
     [SerializeField] private Sprite sprite3;
     [SerializeField] private Sprite sprite4;
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,12 +24,17 @@ public class TriggerImageChanger : MonoBehaviour
         {
             imageRenderer.sprite = sprite3;
         }
+        else if (other.CompareTag("Trigger4"))
+        {
+            imageRenderer.sprite = sprite4;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Trigger3"))
+        if (other.CompareTag("Trigger4"))
         {
+            //imageRenderer.sprite = sprite4;
             imageRenderer.sprite = sprite4;
         }
     }

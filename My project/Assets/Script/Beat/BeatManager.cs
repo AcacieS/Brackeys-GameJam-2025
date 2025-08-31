@@ -228,7 +228,7 @@ public class Intervals
 
         if (_patternIndex < _stepsSO.steps.Length && songPositionInBeats >= _nextBeat)
         {
-            //Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
+            Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
             OnEachBeat?.Invoke();
             _trigger.Invoke();
 

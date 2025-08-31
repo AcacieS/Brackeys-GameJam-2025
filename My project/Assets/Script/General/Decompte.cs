@@ -8,6 +8,7 @@ public class Decompte : MonoBehaviour
     [SerializeField] private float countdownTime = 3f; // seconds
     //[SerializeField] private MonoBehaviour[] scriptsToEnable; // scripts to enable after countdown
     [SerializeField] private GameObject[] scriptsToEnable;
+    [SerializeField] private GameObject[] toDisable;
 
     private void Start()
     {
@@ -43,6 +44,12 @@ public class Decompte : MonoBehaviour
             s.SetActive(true);
             //s.enabled = true;
         }
+        foreach (var s in toDisable)
+        {
+            s.SetActive(false);
+            //s.enabled = true;
+        }
+
 
         if (countdownText != null)
             countdownText.gameObject.SetActive(false); // hide after "GO!"
