@@ -9,10 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9a31db73f1cde4ab79b1b63c9d39e0, type: 3}
-  m_Name: HeallDebuff
+  m_Script: {fileID: 11500000, guid: 9c210a3c989266c4999eb670c85a5411, type: 3}
+  m_Name: 242242
   m_EditorClassIdentifier: 
-  itemName: Heal Debuff
-  cost: 50
-  itemImg: {fileID: 0}
-  description: Heal debuff of Hard Mode lose
+  max_pattern: 16
+  steps:
+  - 2
+  - 4
+  - 2
+  - 2
+  - 4
+  - 2
+  isLooping: 0

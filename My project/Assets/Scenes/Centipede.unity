@@ -342,12 +342,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -916,9 +916,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 9
+  m_Sprite: {fileID: -112968808170193824, guid: 8a629cfe21a71b4408c809db41e420c8, type: 3}
+  m_Color: {r: 0.9946091, g: 0.69569016, b: 0.69569016, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -937,8 +937,8 @@ Transform:
   m_GameObject: {fileID: 532200052}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7254905, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.612941, y: 0.009999556, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1977875634}
@@ -1087,9 +1087,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 9
+  m_Sprite: {fileID: -112968808170193824, guid: 8a629cfe21a71b4408c809db41e420c8, type: 3}
+  m_Color: {r: 0.9946091, g: 0.69569016, b: 0.69569016, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1108,8 +1108,8 @@ Transform:
   m_GameObject: {fileID: 649820226}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6274508, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.36, y: 0.01, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1977875634}
@@ -1347,8 +1347,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 81ab19ee9c09aed4ba57456abc0bacb5, type: 3}
-  m_Resource: {fileID: 8300000, guid: 81ab19ee9c09aed4ba57456abc0bacb5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4bba24e9dd87b1b45aef1acd32b1db7e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4bba24e9dd87b1b45aef1acd32b1db7e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1594,6 +1594,35 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  - sameTime_interval:
+    - _stepsSO: {fileID: 11400000, guid: 0b87b67cce0136e4283df8da0531e0f5, type: 2}
+      _trigger:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2025848753}
+            m_TargetAssemblyTypeName: SpawnNote, Assembly-CSharp
+            m_MethodName: SpawnNoteInstance
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 656916408}
+            m_TargetAssemblyTypeName: Frog_Script, Assembly-CSharp
+            m_MethodName: Stamp
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   hasWait: 1
   wait:
   - _stepsSO: {fileID: 11400000, guid: b4bda57032aa4f04b80e9de93464718d, type: 2}
@@ -1625,7 +1654,7 @@ MonoBehaviour:
   - {fileID: 1408320138}
   - {fileID: 649820226}
   missedLife: {fileID: 1977875633}
-  isTestDiff: 1
+  isTestDiff: 0
   spawnNote: {fileID: 2025848753}
 --- !u!1 &957763085
 GameObject:
@@ -1887,7 +1916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1191535729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,9 +2081,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 9
+  m_Sprite: {fileID: -112968808170193824, guid: 8a629cfe21a71b4408c809db41e420c8, type: 3}
+  m_Color: {r: 0.9946091, g: 0.69569016, b: 0.69569016, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2073,8 +2102,8 @@ Transform:
   m_GameObject: {fileID: 1408320138}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.83, y: 0.009999556, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1977875634}
@@ -2384,7 +2413,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0107, y: -0.0319, z: 0}
-  m_LocalScale: {x: 0.93, y: 0.94, z: 0.10778175}
+  m_LocalScale: {x: 0.93, y: 1.02, z: 0.10778175}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1976172281}
@@ -2766,7 +2795,7 @@ Transform:
   m_GameObject: {fileID: 1977875633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.31, y: 4.26, z: 0}
+  m_LocalPosition: {x: -7.15, y: -4.36, z: 0}
   m_LocalScale: {x: 0.51, y: 0.51, z: 0.51}
   m_ConstrainProportionsScale: 0
   m_Children:

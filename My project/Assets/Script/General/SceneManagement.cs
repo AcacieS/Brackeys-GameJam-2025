@@ -4,12 +4,17 @@ public class SceneManagement : MonoBehaviour
 {
     [SerializeField] private GameObject _startSceneTransition;
     [SerializeField] private GameObject _endSceneTransition;
-    
+    [SerializeField] private bool wantShowStart = true;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _startSceneTransition.SetActive(true);
+        if (wantShowStart)
+        {
+            _startSceneTransition.SetActive(true);
+        }
+
     }
 
     public void Play()

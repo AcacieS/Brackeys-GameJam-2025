@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df9a31db73f1cde4ab79b1b63c9d39e0, type: 3}
-  m_Name: HealArm
+  m_Name: Ear Prosthetic
   m_EditorClassIdentifier: 
-  itemName: Heal Arm
-  cost: 20
-  itemImg: {fileID: 0}
-  description: Heal 5 hp
+  itemName: Ear Prosthetic
+  cost: 40
+  itemImg: {fileID: 3186703485626477293, guid: cede547634e3cca47a040f53159a6519, type: 3}
+  description: A crafted ear, strange and silent, yet it whispers clarity back to
+    you

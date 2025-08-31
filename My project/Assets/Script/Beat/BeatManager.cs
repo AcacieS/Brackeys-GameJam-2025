@@ -62,12 +62,14 @@ public class BeatManager : MonoBehaviour
         // If the current interval is finished, move to the next one
         if (_intervals[index_interval].getIsFinish())
         {
-            index_interval++;  // move to next
-            if (index_interval >= _intervals.Length)
-            {
-                // Reached the end, optionally reset to 0 to loop
-                index_interval = 0;
-            }
+            // index_interval++;  // move to next
+            // if (index_interval >= _intervals.Length)
+            // {
+            //     // Reached the end, optionally reset to 0 to loop
+            //     index_interval = 0;
+
+            // }
+            NextInterval();
         }
 
         // Loop through current interval's sub-intervals

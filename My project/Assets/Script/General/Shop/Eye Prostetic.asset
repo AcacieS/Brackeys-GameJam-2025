@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df9a31db73f1cde4ab79b1b63c9d39e0, type: 3}
-  m_Name: Multiplier
+  m_Name: Eye Prostetic
   m_EditorClassIdentifier: 
-  itemName: Multiplier
-  cost: 20
-  itemImg: {fileID: 0}
-  description: Multiply your points for the chosen level before it starts
+  itemName: Eye Prostetic
+  cost: 50
+  itemImg: {fileID: 6605315766256316153, guid: ef2c5404ecb6eb14a857ef3ef26df124, type: 3}
+  description: "A false eye, strange yet soothing \u2014 it brings back sight to
+    the ruined"

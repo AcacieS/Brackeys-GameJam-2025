@@ -21,6 +21,16 @@ public class endTransition : MonoBehaviour
     }
     public void ClientNextScene()
     {
-        clientScript.WhichScene();
+        if (clientScript == null)
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            int nextSceneIndex = currentSceneIndex + 1;
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            clientScript.WhichScene();
+        }
+            
     }
 }

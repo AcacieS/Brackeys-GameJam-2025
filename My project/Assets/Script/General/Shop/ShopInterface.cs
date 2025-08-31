@@ -11,11 +11,12 @@ public class ShopInterface : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cost;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private GameObject payButton;
+    [SerializeField] private Image itemImg;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GetComponent<Image>().sprite = shopSO.itemImg;
+        itemImg.sprite = shopSO.itemImg;
         cost.text = shopSO.cost.ToString();
     
     }
