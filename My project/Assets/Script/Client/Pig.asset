@@ -19,9 +19,5 @@ MonoBehaviour:
   transition: {fileID: -1137887737, guid: 724a863a7bd60564ab04198ae0121052, type: 3}
   position: {x: -130, y: -2, z: 0}
   scale: {x: 0.56, y: 1, z: 1}
-  gameName: PIG
-  rule: 'Collect food
-
-    Press [A] to jump
-
-    Press [B] to eat'
+  gameName: STOMACH
+  rule: "Eating food:\n[W] \u2013 Grab flying food\n[S] \u2013 Pick up ground food"

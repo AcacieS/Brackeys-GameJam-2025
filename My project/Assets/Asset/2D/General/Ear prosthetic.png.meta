@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ear prosthetic_0: 3186703485626477293
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

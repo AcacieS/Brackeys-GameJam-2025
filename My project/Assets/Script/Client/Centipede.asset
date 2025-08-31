@@ -19,7 +19,5 @@ MonoBehaviour:
   transition: {fileID: 1573225520, guid: 00c4ff46a1fe6ba428962a802eb82c25, type: 3}
   position: {x: -130, y: -2, z: 0}
   scale: {x: 0, y: 0, z: 0}
-  gameName: Centipede
-  rule: 'Press [Space]
-
-    to repeat the rythme given'
+  gameName: HELL OF HOLES
+  rule: "[Space] \u2013 Repeat the rhythm shown"

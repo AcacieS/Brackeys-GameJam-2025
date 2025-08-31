@@ -19,7 +19,5 @@ MonoBehaviour:
   transition: {fileID: -1424412103, guid: 736906942d90877479fc9299f293a535, type: 3}
   position: {x: 0, y: 0, z: 0}
   scale: {x: 0, y: 0, z: 0}
-  gameName: Dog
-  rule: 'Press [A] to hit bad memory
-
-    Press [B] to poke good memory'
+  gameName: MEMORIES
+  rule: "[A] \u2013 Strike a bad memory\n[B] \u2013 Poke a good memory"

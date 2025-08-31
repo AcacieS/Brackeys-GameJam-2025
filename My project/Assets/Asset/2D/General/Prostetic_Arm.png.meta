@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Prostetic_Arm_0: 1899268953166145552
+      Prostetic_Arm_1: 5749606284224433863
+      Prostetic_Arm_2: 3810642025468758617
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

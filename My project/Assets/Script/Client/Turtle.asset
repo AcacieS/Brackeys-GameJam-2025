@@ -19,10 +19,6 @@ MonoBehaviour:
   transition: {fileID: 2153541034148258416, guid: 857f2a4a9b6ae294a89c0f560eb39aa2, type: 3}
   position: {x: 0, y: 0, z: 0}
   scale: {x: 0, y: 0, z: 0}
-  gameName: TURTLE
-  rule: 'Press [Space] to catch microbe
-
-    Hold [Space] to give
-
-    Release [Space]
-    at the right time turtle face'
+  gameName: CLEAN FREAK
+  rule: "[Space] to catch flask\nHold [Space] to approach turtle\nRelease [Space]
+    - Release at the right time (watch the turtle\u2019s face!)"

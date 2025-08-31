@@ -19,5 +19,5 @@ MonoBehaviour:
   transition: {fileID: -181154881, guid: 8a00c73c9600b894c9c9bdf87e2ffa52, type: 3}
   position: {x: 0, y: 0, z: 0}
   scale: {x: 0, y: 0, z: 0}
-  gameName: Fish
-  rule: Press [Space] to hit at the right time following the mirrors.
+  gameName: FLOPPY ISSUES
+  rule: "[Space] \u2013 Hit in time with the mirrors"
