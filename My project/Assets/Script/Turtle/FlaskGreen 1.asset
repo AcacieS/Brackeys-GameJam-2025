@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6bb47627bfb04469bfb06447bcaa33, type: 3}
+  m_Name: FlaskGreen 1
+  m_EditorClassIdentifier: 
+  nameFlask: FlaskGreen
+  flaskPrefab: {fileID: 2278424843527282912, guid: d55cd3c7ff6865b4ab1a9da85a4d56c8, type: 3}
+  lengths_drop: 4
+  lengths_hold: 4
+  flaskImg: {fileID: -8910023160715903073, guid: 75341d4b07635fc44a9a9970ce4e4539, type: 3}

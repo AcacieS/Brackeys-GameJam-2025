@@ -21,6 +21,7 @@ public class BeatManager : MonoBehaviour
     private bool isFinish = false;
     private bool isSongFinish = false;
     private bool waitStarted = false;
+    
 
     private void Start()
     {
@@ -245,7 +246,7 @@ public class Intervals
 
         if (_patternIndex < _stepsSO.steps.Length && songPositionInBeats >= _nextBeat)
         {
-            //Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
+            Debug.Log("next beat: " + _stepsSO.steps[_patternIndex] + " ---- ");
             OnEachBeat?.Invoke();
             _trigger.Invoke();
 

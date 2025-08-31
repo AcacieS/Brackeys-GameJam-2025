@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,11 +28,17 @@ public class BeatGame : BeatManager
     [Header("Difficulty")]
     [SerializeField] private ClientSO gameClientSO;
     [SerializeField] private GameObject showDiffObj;
+    [SerializeField] private int lostCount;
+    [SerializeField] private int maxMissedCount = 3;
+    [SerializeField] GameObject[] missedLifes;
+    [SerializeField] GameObject missedLife;
     [SerializeField] private bool isTestDiff = false;
+    
     private bool showDiff = false;
 
     public override void StartOverride()
     {
+        lostCount = maxMissedCount;
         scoreUI.text = "Score: 0";
         currentMultiplier = 1;
         setDiff();
@@ -62,6 +69,7 @@ public class BeatGame : BeatManager
     }
     public virtual void setHard()
     {
+        missedLife.SetActive(true);
         currentDifficulty = Difficulty.Hard;
         scorePerNote *= 2;
         scorePerGoodNote *= 2;
@@ -137,6 +145,24 @@ public class BeatGame : BeatManager
         multiplierTracker = 0;
         currentMultiplier = 1;
         multiplierUI.text = "Multiplier: x" + currentMultiplier;
+        if (currentDifficulty == Difficulty.Hard)
+        {
+            Debug.Log("lostCount: " + (lostCount - 1));
+            missedLifes[lostCount-1].SetActive(false);
+            lostCount--;
+
+            if (lostCount <= 0)
+            {
+                //
+                Lost();
+            }
+        }
+    }
+    private void Lost()
+    {
+        Debug.Log("Should Change Scene");
+        GameManager.Instance.WinMiniGame(false);
+        SceneManager.LoadScene("Scenes/Shop");
     }
     public override void OnSongFinished()
     {
@@ -144,7 +170,6 @@ public class BeatGame : BeatManager
         base.OnSongFinished();
         GameManager.Instance.AddCoins(currentScore);
         SceneManager.LoadScene("Scenes/Shop");
-
     }
 
     void Awake()
