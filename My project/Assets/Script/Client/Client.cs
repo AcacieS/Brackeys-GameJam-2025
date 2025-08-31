@@ -17,7 +17,7 @@ public class Client : MonoBehaviour
     [SerializeField] private bool isFinish = false;
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI RuleUI;
-    [SerializeField] private Image NameRule;
+    [SerializeField] private TextMeshProUGUI NameRule;
     [SerializeField] private GameObject play;
     private Animator anim;
     
@@ -111,7 +111,7 @@ public class Client : MonoBehaviour
     }
     public void ShowGameRule()
     {
-        NameRule.sprite = currentClientSO.gameName;
+        NameRule.text = currentClientSO.gameName;
         RuleUI.text = currentClientSO.rule;
         play.SetActive(true);
     }

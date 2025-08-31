@@ -10,7 +10,8 @@ public class ClientSO : ScriptableObject
     public Sprite transition;
     public Vector3 position;
     public Vector3 scale;
-    public Sprite gameName;
+    public string gameName;
+    
     [TextArea(1, 5)]
     public string rule;
     

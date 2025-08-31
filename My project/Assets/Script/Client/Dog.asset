@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clientName: Dog
   scene: Dog
-  sprite: {fileID: 0}
+  sprite: {fileID: -1424412103, guid: 736906942d90877479fc9299f293a535, type: 3}
   nbTimeVisited: 0
-  transition: {fileID: 0}
+  transition: {fileID: -1424412103, guid: 736906942d90877479fc9299f293a535, type: 3}
   position: {x: 0, y: 0, z: 0}
   scale: {x: 0, y: 0, z: 0}
-  gameName: {fileID: 21300002, guid: 9d063b79be80b2b4886e4c74b45f8a29, type: 3}
+  gameName: Dog
   rule: 'Press [A] to hit bad memory
 
     Press [B] to poke good memory'

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clientName: Centipede
   scene: Centipede
-  sprite: {fileID: -447036196, guid: 69cfec3dd4075dd47a42065ee57b8fc7, type: 3}
+  sprite: {fileID: 1573225520, guid: 00c4ff46a1fe6ba428962a802eb82c25, type: 3}
   nbTimeVisited: 3
-  transition: {fileID: -447036196, guid: 69cfec3dd4075dd47a42065ee57b8fc7, type: 3}
+  transition: {fileID: 1573225520, guid: 00c4ff46a1fe6ba428962a802eb82c25, type: 3}
   position: {x: -130, y: -2, z: 0}
   scale: {x: 0, y: 0, z: 0}
-  gameName: {fileID: 21300006, guid: 9d063b79be80b2b4886e4c74b45f8a29, type: 3}
+  gameName: Centipede
   rule: 'Press [Space]
 
     to repeat the rythme given'
