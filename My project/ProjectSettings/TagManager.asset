@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Note
   - Trigger
+  - GoodMemory
+  - BadMemory
+  - HitWrong
   layers:
   - Default
   - TransparentFX

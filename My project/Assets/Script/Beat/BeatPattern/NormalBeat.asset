@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c210a3c989266c4999eb670c85a5411, type: 3}
   m_Name: NormalBeat
   m_EditorClassIdentifier: 
-  max_pattern: 8
+  max_pattern: 4
   steps:
   - 1
   isLooping: 1
