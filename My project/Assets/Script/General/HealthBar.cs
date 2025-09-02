@@ -9,7 +9,8 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     private void Start()
     {
-        healthBar.SetMaxHealth(GameManager.Instance.GetMaxArmHealth());
+        UpdateHealthUI();
+        //healthBar.SetMaxHealth(GameManager.Instance.GetMaxArmHealth());
     }
     public void SetMaxHealth(float health)
     {
@@ -24,16 +25,16 @@ public class HealthBar : MonoBehaviour
     }
     private void OnEnable()
     {
-        GameManager.OnHealthChanged += UpdateCoinsUI;
-        UpdateCoinsUI(); // also update immediately in case coins changed before scene loaded
+        GameManager.OnHealthChanged += UpdateHealthUI;
+        UpdateHealthUI(); // also update immediately in case coins changed before scene loaded
     }
 
     private void OnDisable()
     {
-        GameManager.OnHealthChanged -= UpdateCoinsUI;
+        GameManager.OnHealthChanged -= UpdateHealthUI;
     }
 
-    private void UpdateCoinsUI()
+    private void UpdateHealthUI()
     {
         SetHealth(GameManager.Instance.GetArmHealth());
     }

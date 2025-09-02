@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {fileID: 0}
-  totalBeats: 16
+  totalBeats: 18
 --- !u!50 &1223570522353608140
 Rigidbody2D:
   serializedVersion: 5

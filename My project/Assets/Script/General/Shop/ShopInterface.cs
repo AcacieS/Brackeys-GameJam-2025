@@ -31,6 +31,6 @@ public class ShopInterface : MonoBehaviour
         description.text = shopSO.description;
         itemName.text = shopSO.itemName;
         payButton.SetActive(true);
-        payButton.GetComponent<PayButtonScript>().SetCurrentPay(shopSO.cost);
+        payButton.GetComponent<PayButtonScript>().SetCurrentPay(shopSO);
     }
 }

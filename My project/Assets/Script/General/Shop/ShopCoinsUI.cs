@@ -4,6 +4,10 @@ using UnityEngine;
 public class ShopCoinsUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coinsText;
+    private void Start()
+    {
+        GameManager.Instance.SetCoinsUI(gameObject);
+    }
 
     private void OnEnable()
     {

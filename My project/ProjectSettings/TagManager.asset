@@ -12,6 +12,8 @@ TagManager:
   - Trigger3
   - Trigger4
   - flask
+  - HitWrong
+  - Bubble
   layers:
   - Default
   - TransparentFX

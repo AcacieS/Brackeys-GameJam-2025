@@ -19,6 +19,7 @@ public class Client : MonoBehaviour
     [SerializeField] private TextMeshProUGUI RuleUI;
     [SerializeField] private TextMeshProUGUI NameRule;
     [SerializeField] private GameObject play;
+    [SerializeField] private GameObject sacrificeImg;
     private Animator anim;
     
 
@@ -49,12 +50,12 @@ public class Client : MonoBehaviour
                 if (GameManager.Instance.GetWinHard()) //you win -> client die
                 {
                     play.SetActive(false);
-                    anim.Play("Client Die");
+                    sacrificeImg.SetActive(true);
                 }
                 else //you lost -> lost health
                 {
                     Debug.Log("losttt");
-                    GameManager.Instance.RemoveArmHealth(10);
+                    GameManager.Instance.RemoveArmHealth(30);
                     play.SetActive(false);
                     anim.Play("Client Quit");
                     GameManager.Instance.WinMiniGame(true);
@@ -68,6 +69,7 @@ public class Client : MonoBehaviour
             SpawnClient();
         }
     }
+    
     public void SpawnClient()
     {
         if (testClient == null)
@@ -79,7 +81,7 @@ public class Client : MonoBehaviour
         else
         {
             currentClientSO = testClient;
-            
+
         }
         GetComponent<SpriteRenderer>().sprite = currentClientSO.sprite;
         anim.Play("Client Enter");
@@ -96,8 +98,10 @@ public class Client : MonoBehaviour
     public void LoadMiniGame()
     {
         endTrans.ChangeSprite(currentClientSO.sprite);
-        sceneManagement.Play();
         currentClientSO.nbTimeVisited++;
+        GameManager.Instance.RemoveArmHealth(10);
+        sceneManagement.Play();
+        
     }
     public void WhichScene()
     {

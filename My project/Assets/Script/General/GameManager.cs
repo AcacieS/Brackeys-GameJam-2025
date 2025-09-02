@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,10 +16,8 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject coinsUI;
     [SerializeField] private float removeArmHealthRate = 0.5f;
-   // [SerializeField] private HealthBar healthBar;
+    [SerializeField] private HealthBar healthBar;
 
-    [Header("Client")]
-    [SerializeField] private Client clientScript;
     private bool winHard = true;
 
     //--------------------------- Difficulty -------------------------------------
@@ -49,6 +46,10 @@ public class GameManager : MonoBehaviour
     public void AddArmHealth(float AddArmHealth)
     {
         armHealth += AddArmHealth;
+        if (armHealth > maxArmHealth)
+        {
+            armHealth = maxArmHealth;
+        }
         OnHealthChanged?.Invoke();
         // healthBar.SetHealth(armHealth);
 
@@ -68,16 +69,21 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/Lost");
     }
-    private IEnumerator RemoveArmHealthRate()
-    {
-        while (armHealth > 0)
-        {
-            yield return new WaitForSeconds(1);
-            RemoveArmHealth(removeArmHealthRate);
-        }
-    }
+
+    // private IEnumerator RemoveArmHealthRate()
+    // {
+    //     while (armHealth > 0)
+    //     {
+    //         yield return new WaitForSeconds(1);
+    //         RemoveArmHealth(removeArmHealthRate);
+    //     }
+    // }
 
     //--------------------------- Coins ---------------------------------------------
+    public void SetCoinsUI(GameObject pCoinsUI)
+    {
+        coinsUI = pCoinsUI;
+    }
     public int GetCoins()
     {
         return coins;
@@ -87,30 +93,29 @@ public class GameManager : MonoBehaviour
     {
         coins += AddCoins;
         OnCoinsChanged?.Invoke();
-        // coinsUI.text = coins.ToString();
-        // Debug.Log("coins: "+coins);
-
     }
-    public void RemoveCoins(int RemoveCoins)
+    public bool RemoveCoins(int RemoveCoins)
     {
         if (coins - RemoveCoins < 0)
         {
             coinsUI.GetComponent<Animator>().Play("coins_red");
-            return;
+            return false;
         }
         coins -= RemoveCoins;
         OnCoinsChanged?.Invoke();
+        return true;
         //coinsUI.text = coins.ToString();
     }
     //------------------------- Client Spawn -------------------------
     void Start()
     {
-        
-        StartCoroutine(RemoveArmHealthRate());
+        healthBar.SetMaxHealth(GetMaxArmHealth());
+        //StartCoroutine(RemoveArmHealthRate());
     }
+    
 
     //-------------------------- General ------------------------------------
-   
+
 
     void Awake()
     {

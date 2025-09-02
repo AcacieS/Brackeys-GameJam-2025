@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Prostetic Arm
   m_EditorClassIdentifier: 
   itemName: Prostetic Arm
-  cost: 20
+  cost: 500
   itemImg: {fileID: 5749606284224433863, guid: 47d615bcb22cc4d48a2f8fa2ee9fdcc8, type: 3}
-  description: An arm of metal and wire, granting strength where flesh has failed
+  description: 'An arm of metal and wire, granting strength where flesh has failed
+
+    +50
+    health'
+  isBought: 0
+  addHealth: 50

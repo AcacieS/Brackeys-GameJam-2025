@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Ear Prosthetic
   m_EditorClassIdentifier: 
   itemName: Ear Prosthetic
-  cost: 40
+  cost: 150
   itemImg: {fileID: 3186703485626477293, guid: cede547634e3cca47a040f53159a6519, type: 3}
-  description: A crafted ear, strange and silent, yet it whispers clarity back to
+  description: 'A crafted ear, strange and silent, yet it whispers clarity back to
     you
+
+    +20 health'
+  isBought: 0
+  addHealth: 20

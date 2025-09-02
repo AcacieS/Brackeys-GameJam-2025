@@ -9,6 +9,8 @@ public class BeatGame : BeatManager
     //[SerializeField] private Animator animBeat;
     [SerializeField] private AudioClip audioHole;
     [SerializeField] private Vector3 place;
+    
+    
 
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI scoreUI;
@@ -16,8 +18,11 @@ public class BeatGame : BeatManager
     [SerializeField] private int scorePerNote = 100;
     [SerializeField] private int scorePerGoodNote = 125;
     [SerializeField] private int scorePerPerfectNote = 150;
+    [SerializeField] private GameObject scoreStatePrefab;
+    [SerializeField] private Sprite[] scoreStates;
+    [SerializeField] private Transform scorePlace;
 
-    [Header("Score")]
+    [Header("Multiplier")]
 
     [SerializeField] private TextMeshProUGUI multiplierUI;
     [SerializeField] private int currentMultiplier;
@@ -32,6 +37,7 @@ public class BeatGame : BeatManager
     [SerializeField] GameObject[] missedLifes;
     [SerializeField] GameObject missedLife;
     [SerializeField] private bool isTestDiff = false;
+    [SerializeField] private bool hasDiff = false;
     
     private bool showDiff = false;
 
@@ -55,15 +61,19 @@ public class BeatGame : BeatManager
         if (gameClientSO != null)
         {
             int timeVisited = gameClientSO.nbTimeVisited;
-            if (timeVisited >= 3 || isTestDiff)
+            if (hasDiff)
             {
-                int isDifficult = Random.Range(0, 2);
-                if (isDifficult == 0 ||isTestDiff) //true
+                if (timeVisited >= 3 || isTestDiff)
                 {
-                    showDiff = true;
+                    int isDifficult = Random.Range(0, 2);
+                    if (isDifficult == 0 || isTestDiff) //true
+                    {
+                        showDiff = true;
 
+                    }
                 }
             }
+            
         }
     }
     public virtual void setHard()
@@ -126,28 +136,33 @@ public class BeatGame : BeatManager
     public void NormalHit()
     {
         currentScore += scorePerNote * currentMultiplier;
+        SpawnNoteState(1);
         NoteHit();
     }
     public void GoodHit()
     {
         currentScore += scorePerGoodNote * currentMultiplier;
+        SpawnNoteState(2);
         NoteHit();
     }
     public void PerfectHit()
     {
         currentScore += scorePerPerfectNote * currentMultiplier;
+        SpawnNoteState(3);
         NoteHit();
     }
+    
     public virtual void NoteMissed()
     {
         Debug.Log("Missed Note");
         multiplierTracker = 0;
         currentMultiplier = 1;
         multiplierUI.text = "Multiplier: x" + currentMultiplier;
+        SpawnNoteState(0);
         if (currentDifficulty == Difficulty.Hard)
         {
             Debug.Log("lostCount: " + (lostCount - 1));
-            missedLifes[lostCount-1].SetActive(false);
+            missedLifes[lostCount - 1].SetActive(false);
             lostCount--;
 
             if (lostCount <= 0)
@@ -156,6 +171,11 @@ public class BeatGame : BeatManager
                 Lost();
             }
         }
+    }
+    private void SpawnNoteState(int index)
+    {
+        GameObject scoreObj = Instantiate(scoreStatePrefab, scorePlace.transform.position, Quaternion.identity);
+        scoreObj.GetComponent<SpriteRenderer>().sprite = scoreStates[index];
     }
     private void Lost()
     {

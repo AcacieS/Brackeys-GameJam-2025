@@ -8,6 +8,8 @@ public class ShopItemSO : ScriptableObject
     public int cost;
     public Sprite itemImg;
     [TextArea]
-    public string description; 
+    public string description;
+    public bool isBought;
+    public int addHealth;
     
 }

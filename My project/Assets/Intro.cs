@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class Intro : MonoBehaviour
     {
         if (currentStory + 1 < maxStory)
         {
+
             if (currentStory == 0)
             {
                 button[0].SetActive(false);
@@ -21,8 +21,10 @@ public class Intro : MonoBehaviour
             story[currentStory].SetActive(false);
             currentStory++;
             story[currentStory].SetActive(true);
+            gameObject.SetActive(false);
             
-        }else
+        }
+        else
         {
             scene.Play();
             // int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

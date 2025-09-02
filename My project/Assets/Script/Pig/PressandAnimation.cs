@@ -19,6 +19,7 @@ public class PressandAnimation : MonoBehaviour
     public Sprite pigEating1;
     public Sprite pigEating2;
     public Sprite pigJumping;
+    [SerializeField] private Animator anim;
 
     public static class AnimationState
     {
@@ -146,6 +147,7 @@ public class PressandAnimation : MonoBehaviour
 
         if (Input.GetKeyDown(keyToPress) && canBePressed)
         {
+            anim.Play("pig_eat");
             PressAtArea();
         }
     }

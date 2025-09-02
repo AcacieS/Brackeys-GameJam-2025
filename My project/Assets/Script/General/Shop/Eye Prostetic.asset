@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Eye Prostetic
   m_EditorClassIdentifier: 
   itemName: Eye Prostetic
-  cost: 50
+  cost: 350
   itemImg: {fileID: 6605315766256316153, guid: ef2c5404ecb6eb14a857ef3ef26df124, type: 3}
   description: "A false eye, strange yet soothing \u2014 it brings back sight to
-    the ruined"
+    the ruined\n+30 health"
+  isBought: 0
+  addHealth: 30

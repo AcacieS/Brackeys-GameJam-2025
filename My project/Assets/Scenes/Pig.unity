@@ -1657,8 +1657,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a82982426e3b90d4887d30eeced5116a, type: 2}
+  m_sharedMaterial: {fileID: 7419384230510575103, guid: a82982426e3b90d4887d30eeced5116a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3942,6 +3942,7 @@ MonoBehaviour:
   pigEating1: {fileID: -5145377406912819389, guid: 217612dd08477f143b1d641c492daff7, type: 3}
   pigEating2: {fileID: -4959862991192431679, guid: dccf563318ef39f4d90496ee66202e1b, type: 3}
   pigJumping: {fileID: -3392100986958533579, guid: aa9903cca06133f4cb610c01bf3a7be9, type: 3}
+  anim: {fileID: 624914649}
 --- !u!95 &624914649
 Animator:
   serializedVersion: 7
@@ -4657,6 +4658,13 @@ MonoBehaviour:
   scorePerNote: 1
   scorePerGoodNote: 2
   scorePerPerfectNote: 4
+  scoreStatePrefab: {fileID: 1952780837044797105, guid: 6ebe222ea02080643b77322d9a7ab886, type: 3}
+  scoreStates:
+  - {fileID: 786521169, guid: 7b2694c35047738448b9ff88df483e7b, type: 3}
+  - {fileID: 1461295056, guid: 8ed5d927273ccd746a1de2c70d6501b5, type: 3}
+  - {fileID: 1491761548, guid: 88ab5467849722749831c9e2ffc6955c, type: 3}
+  - {fileID: 1644845977, guid: 0133f202e3a33a34b9d8553bc6645799, type: 3}
+  scorePlace: {fileID: 1744529928}
   multiplierUI: {fileID: 1447041292}
   currentMultiplier: 0
   multiplierTracker: 0
@@ -4668,6 +4676,7 @@ MonoBehaviour:
   missedLifes: []
   missedLife: {fileID: 0}
   isTestDiff: 0
+  hasDiff: 0
 --- !u!4 &709006276
 Transform:
   m_ObjectHideFlags: 0
@@ -6065,8 +6074,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a82982426e3b90d4887d30eeced5116a, type: 2}
+  m_sharedMaterial: {fileID: 7419384230510575103, guid: a82982426e3b90d4887d30eeced5116a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6156,11 +6165,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2140231829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -887, y: 450}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -27, y: -91}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &984730334
 GameObject:
   m_ObjectHideFlags: 0
@@ -9099,8 +9108,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Multiplier: x1'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a82982426e3b90d4887d30eeced5116a, type: 2}
+  m_sharedMaterial: {fileID: 7419384230510575103, guid: a82982426e3b90d4887d30eeced5116a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9611,6 +9620,7 @@ GameObject:
   - component: {fileID: 1545342460}
   - component: {fileID: 1545342462}
   - component: {fileID: 1545342461}
+  - component: {fileID: 1545342463}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -9675,6 +9685,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545342459}
   m_CullTransparentMesh: 1
+--- !u!95 &1545342463
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545342459}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f69d36efcd80ae146a691acd017fefa2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1570527587
 GameObject:
   m_ObjectHideFlags: 0
@@ -10578,6 +10610,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f08d401b6dd3e5d48b9ca8e0b5f2034e, type: 3}
+--- !u!1 &1744529927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1744529928}
+  m_Layer: 0
+  m_Name: Performance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1744529928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744529927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.86, y: -0, z: -0.040744476}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1744857125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3052171790177355012, guid: f08d401b6dd3e5d48b9ca8e0b5f2034e, type: 3}
@@ -12106,10 +12169,11 @@ MonoBehaviour:
   audioClip: {fileID: 0}
   spriteRenderer1: {fileID: 624914647}
   spriteRenderer2: {fileID: 2006067924}
-  pigIdle: {fileID: -2998630966923923623, guid: 724a863a7bd60564ab04198ae0121052, type: 3}
+  pigIdle: {fileID: -2117140181, guid: 46183fd45ef17f74eae98aa55d32f214, type: 3}
   pigEating1: {fileID: -5145377406912819389, guid: 217612dd08477f143b1d641c492daff7, type: 3}
   pigEating2: {fileID: -4959862991192431679, guid: dccf563318ef39f4d90496ee66202e1b, type: 3}
   pigJumping: {fileID: -3392100986958533579, guid: aa9903cca06133f4cb610c01bf3a7be9, type: 3}
+  anim: {fileID: 624914649}
 --- !u!1001 &2007240137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13116,3 +13180,4 @@ SceneRoots:
   - {fileID: 1570527591}
   - {fileID: 2026582267}
   - {fileID: 1992282636}
+  - {fileID: 1744529928}
